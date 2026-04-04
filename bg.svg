@@ -1,0 +1,368 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0b0e13"/>
+      <stop offset="100%" style="stop-color:#0d1520"/>
+    </linearGradient>
+    <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00c2ff;stop-opacity:0"/>
+      <stop offset="30%" style="stop-color:#00c2ff;stop-opacity:0.6"/>
+      <stop offset="70%" style="stop-color:#0057b8;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#0057b8;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ffaa;stop-opacity:0"/>
+      <stop offset="40%" style="stop-color:#00ffaa;stop-opacity:0.35"/>
+      <stop offset="100%" style="stop-color:#00ffaa;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="waveGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f0a500;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#f0a500;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#f0a500;stop-opacity:0"/>
+    </linearGradient>
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00c2ff;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#00c2ff;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00c2ff;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#00c2ff;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+
+  <!-- ═══════════════════════════════════════════
+       GRID (subtle engineering graph paper)
+  ═══════════════════════════════════════════ -->
+  <g opacity="0.07" stroke="#1e4a7a" stroke-width="0.5">
+    <!-- Vertical lines -->
+    <line x1="80" y1="0" x2="80" y2="900"/>
+    <line x1="160" y1="0" x2="160" y2="900"/>
+    <line x1="240" y1="0" x2="240" y2="900"/>
+    <line x1="320" y1="0" x2="320" y2="900"/>
+    <line x1="400" y1="0" x2="400" y2="900"/>
+    <line x1="480" y1="0" x2="480" y2="900"/>
+    <line x1="560" y1="0" x2="560" y2="900"/>
+    <line x1="640" y1="0" x2="640" y2="900"/>
+    <line x1="720" y1="0" x2="720" y2="900"/>
+    <line x1="800" y1="0" x2="800" y2="900"/>
+    <line x1="880" y1="0" x2="880" y2="900"/>
+    <line x1="960" y1="0" x2="960" y2="900"/>
+    <line x1="1040" y1="0" x2="1040" y2="900"/>
+    <line x1="1120" y1="0" x2="1120" y2="900"/>
+    <line x1="1200" y1="0" x2="1200" y2="900"/>
+    <line x1="1280" y1="0" x2="1280" y2="900"/>
+    <line x1="1360" y1="0" x2="1360" y2="900"/>
+    <line x1="1440" y1="0" x2="1440" y2="900"/>
+    <line x1="1520" y1="0" x2="1520" y2="900"/>
+    <!-- Horizontal lines -->
+    <line x1="0" y1="75" x2="1600" y2="75"/>
+    <line x1="0" y1="150" x2="1600" y2="150"/>
+    <line x1="0" y1="225" x2="1600" y2="225"/>
+    <line x1="0" y1="300" x2="1600" y2="300"/>
+    <line x1="0" y1="375" x2="1600" y2="375"/>
+    <line x1="0" y1="450" x2="1600" y2="450"/>
+    <line x1="0" y1="525" x2="1600" y2="525"/>
+    <line x1="0" y1="600" x2="1600" y2="600"/>
+    <line x1="0" y1="675" x2="1600" y2="675"/>
+    <line x1="0" y1="750" x2="1600" y2="750"/>
+    <line x1="0" y1="825" x2="1600" y2="825"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       ELECTROMAGNETIC SPECTRUM WAVES (left area)
+  ═══════════════════════════════════════════ -->
+  <!-- Label -->
+
+  <!-- Radio wave — very low frequency, large amplitude -->
+  <path d="M0,160 C40,110 80,210 120,160 C160,110 200,210 240,160 C280,110 320,210 360,160 C400,110 440,210 480,160 C520,110 560,210 600,160 C640,110 680,210 720,160"
+        stroke="url(#waveGrad1)" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+  <!-- Microwave — medium frequency -->
+  <path d="M0,200 C20,175 40,225 60,200 C80,175 100,225 120,200 C140,175 160,225 180,200 C200,175 220,225 240,200 C260,175 280,225 300,200 C320,175 340,225 360,200 C380,175 400,225 420,200 C440,175 460,225 480,200 C500,175 520,225 540,200 C560,175 580,225 600,200 C620,175 640,225 660,200 C680,175 700,225 720,200"
+        stroke="#0057b8" stroke-width="1.2" fill="none" opacity="0.45"/>
+
+  <!-- IR wave — higher frequency, smaller amplitude -->
+  <path d="M0,230 C10,218 20,242 30,230 C40,218 50,242 60,230 C70,218 80,242 90,230 C100,218 110,242 120,230 C130,218 140,242 150,230 C160,218 170,242 180,230 C190,218 200,242 210,230 C220,218 230,242 240,230 C250,218 260,242 270,230 C280,218 290,242 300,230 C310,218 320,242 330,230 C340,218 350,242 360,230 C370,218 380,242 390,230 C400,218 410,242 420,230 C430,218 440,242 450,230 C460,218 470,242 480,230 C490,218 500,242 510,230 C520,218 530,242 540,230 C550,218 560,242 570,230 C580,218 590,242 600,230 C610,218 620,242 630,230 C640,218 650,242 660,230 C670,218 680,242 690,230 C700,218 710,242 720,230"
+        stroke="#00ffaa" stroke-width="1" fill="none" opacity="0.35" filter="url(#glow)"/>
+
+  <!-- Visible light — very high frequency -->
+  <path d="M0,255 C4,249 8,261 12,255 C16,249 20,261 24,255 C28,249 32,261 36,255 C40,249 44,261 48,255 C52,249 56,261 60,255 C64,249 68,261 72,255 C76,249 80,261 84,255 C88,249 92,261 96,255 C100,249 104,261 108,255 C112,249 116,261 120,255 C124,249 128,261 132,255 C136,249 140,261 144,255 C148,249 152,261 156,255 C160,249 164,261 168,255 C172,249 176,261 180,255 C184,249 188,261 192,255 C196,249 200,261 204,255 C208,249 212,261 216,255 C220,249 224,261 228,255 C232,249 236,261 240,255 C244,249 248,261 252,255 C256,249 260,261 264,255 C268,249 272,261 276,255 C280,249 284,261 288,255 C292,249 296,261 300,255 C304,249 308,261 312,255 C316,249 320,261 324,255 C328,249 332,261 336,255 C340,249 344,261 348,255 C352,249 356,261 360,255 C364,249 368,261 372,255 C376,249 380,261 384,255 C388,249 392,261 396,255 C400,249 404,261 408,255 C412,249 416,261 420,255 C424,249 428,261 432,255 C436,249 440,261 444,255 C448,249 452,261 456,255 C460,249 464,261 468,255 C472,249 476,261 480,255 C484,249 488,261 492,255 C496,249 500,261 504,255 C508,249 512,261 516,255 C520,249 524,261 528,255 C532,249 536,261 540,255 C544,249 548,261 552,255 C556,249 560,261 564,255 C568,249 572,261 576,255 C580,249 584,261 588,255 C592,249 596,261 600,255 C604,249 608,261 612,255 C616,249 620,261 624,255 C628,249 632,261 636,255 C640,249 644,261 648,255 C652,249 656,261 660,255 C664,249 668,261 672,255 C676,249 680,261 684,255 C688,249 692,261 696,255 C700,249 704,261 708,255 C712,249 716,261 720,255"
+        stroke="#f0a500" stroke-width="0.8" fill="none" opacity="0.3"/>
+
+  <!-- RF signal amplitude spectrum bars (bottom left) -->
+  <g opacity="0.5" filter="url(#glow)">
+    <line x1="30" y1="395" x2="30" y2="395" stroke="#1e4a7a" stroke-width="1"/>
+    <!-- Spectrum bars -->
+    <rect x="30"  y="430" width="6" height="30"  fill="#00c2ff" opacity="0.3"/>
+    <rect x="40"  y="415" width="6" height="45"  fill="#00c2ff" opacity="0.4"/>
+    <rect x="50"  y="400" width="6" height="60"  fill="#00c2ff" opacity="0.5"/>
+    <rect x="60"  y="390" width="6" height="70"  fill="#00c2ff" opacity="0.7"/>
+    <rect x="70"  y="375" width="6" height="85"  fill="#00c2ff" opacity="0.9"/>
+    <rect x="80"  y="365" width="6" height="95"  fill="#00c2ff" opacity="1.0"/>
+    <rect x="90"  y="355" width="6" height="105" fill="#0099dd" opacity="0.9"/>
+    <rect x="100" y="370" width="6" height="90"  fill="#0099dd" opacity="0.7"/>
+    <rect x="110" y="385" width="6" height="75"  fill="#0057b8" opacity="0.6"/>
+    <rect x="120" y="400" width="6" height="60"  fill="#0057b8" opacity="0.4"/>
+    <rect x="130" y="418" width="6" height="42"  fill="#0057b8" opacity="0.3"/>
+    <rect x="140" y="430" width="6" height="30"  fill="#0057b8" opacity="0.2"/>
+    <rect x="150" y="440" width="6" height="20"  fill="#0057b8" opacity="0.15"/>
+    <rect x="160" y="445" width="6" height="15"  fill="#0057b8" opacity="0.1"/>
+    <!-- Baseline -->
+    <line x1="25" y1="460" x2="175" y2="460" stroke="#1e4a7a" stroke-width="0.8" opacity="0.5"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       RADAR / CIRCULAR SWEEP (center-right)
+  ═══════════════════════════════════════════ -->
+  <g transform="translate(1150, 380)" opacity="0.55">
+    <!-- Radar rings -->
+    <circle cx="0" cy="0" r="220" stroke="#1e4a7a" stroke-width="0.8" fill="none"/>
+    <circle cx="0" cy="0" r="165" stroke="#1e4a7a" stroke-width="0.8" fill="none"/>
+    <circle cx="0" cy="0" r="110" stroke="#1e4a7a" stroke-width="0.8" fill="none"/>
+    <circle cx="0" cy="0" r="55"  stroke="#1e4a7a" stroke-width="0.8" fill="none"/>
+    <!-- Cross hairs -->
+    <line x1="-220" y1="0" x2="220" y2="0" stroke="#1e4a7a" stroke-width="0.6"/>
+    <line x1="0" y1="-220" x2="0" y2="220" stroke="#1e4a7a" stroke-width="0.6"/>
+    <line x1="-155" y1="-155" x2="155" y2="155" stroke="#1e4a7a" stroke-width="0.4"/>
+    <line x1="155" y1="-155" x2="-155" y2="155" stroke="#1e4a7a" stroke-width="0.4"/>
+    <!-- Sweep glow (static representation) -->
+    <path d="M0,0 L200,-80 A220,220 0 0,1 220,0 Z" fill="url(#radarGlow)" opacity="0.6"/>
+    <!-- Sweep line -->
+    <line x1="0" y1="0" x2="200" y2="-80" stroke="#00c2ff" stroke-width="1.5" opacity="0.8" filter="url(#glow)"/>
+    <!-- Target blips -->
+    <circle cx="130" cy="-60" r="4" fill="#00c2ff" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="130" cy="-60" r="9" stroke="#00c2ff" stroke-width="0.8" fill="none" opacity="0.4"/>
+    <circle cx="-90" cy="110" r="3" fill="#00ffaa" opacity="0.7" filter="url(#glow)"/>
+    <circle cx="60"  cy="180" r="2.5" fill="#00c2ff" opacity="0.5"/>
+    <circle cx="-150" cy="-70" r="2" fill="#00c2ff" opacity="0.4"/>
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="5" fill="#00c2ff" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="10" stroke="#00c2ff" stroke-width="1" fill="none" opacity="0.5"/>
+    <!-- Labels -->
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       NEURAL NETWORK / AI (center)
+  ═══════════════════════════════════════════ -->
+  <g opacity="0.6">
+
+    <!-- Layer connections (lines first, behind nodes) -->
+    <!-- Input → Hidden1 -->
+    <line x1="480" y1="180" x2="620" y2="160" stroke="#0057b8" stroke-width="0.7" opacity="0.5"/>
+    <line x1="480" y1="180" x2="620" y2="220" stroke="#0057b8" stroke-width="0.7" opacity="0.5"/>
+    <line x1="480" y1="180" x2="620" y2="280" stroke="#0057b8" stroke-width="0.7" opacity="0.3"/>
+    <line x1="480" y1="180" x2="620" y2="340" stroke="#0057b8" stroke-width="0.7" opacity="0.2"/>
+
+    <line x1="480" y1="250" x2="620" y2="160" stroke="#0057b8" stroke-width="0.7" opacity="0.3"/>
+    <line x1="480" y1="250" x2="620" y2="220" stroke="#0057b8" stroke-width="0.7" opacity="0.6"/>
+    <line x1="480" y1="250" x2="620" y2="280" stroke="#0057b8" stroke-width="0.7" opacity="0.5"/>
+    <line x1="480" y1="250" x2="620" y2="340" stroke="#0057b8" stroke-width="0.7" opacity="0.3"/>
+
+    <line x1="480" y1="320" x2="620" y2="160" stroke="#0057b8" stroke-width="0.7" opacity="0.2"/>
+    <line x1="480" y1="320" x2="620" y2="220" stroke="#0057b8" stroke-width="0.7" opacity="0.3"/>
+    <line x1="480" y1="320" x2="620" y2="280" stroke="#0057b8" stroke-width="0.7" opacity="0.6"/>
+    <line x1="480" y1="320" x2="620" y2="340" stroke="#0057b8" stroke-width="0.7" opacity="0.5"/>
+
+    <line x1="480" y1="390" x2="620" y2="220" stroke="#0057b8" stroke-width="0.7" opacity="0.2"/>
+    <line x1="480" y1="390" x2="620" y2="280" stroke="#0057b8" stroke-width="0.7" opacity="0.4"/>
+    <line x1="480" y1="390" x2="620" y2="340" stroke="#0057b8" stroke-width="0.7" opacity="0.6"/>
+
+    <!-- Hidden1 → Hidden2 -->
+    <line x1="620" y1="160" x2="760" y2="190" stroke="#00c2ff" stroke-width="0.7" opacity="0.5"/>
+    <line x1="620" y1="160" x2="760" y2="260" stroke="#00c2ff" stroke-width="0.7" opacity="0.3"/>
+    <line x1="620" y1="160" x2="760" y2="330" stroke="#00c2ff" stroke-width="0.7" opacity="0.2"/>
+
+    <line x1="620" y1="220" x2="760" y2="190" stroke="#00c2ff" stroke-width="0.7" opacity="0.4"/>
+    <line x1="620" y1="220" x2="760" y2="260" stroke="#00c2ff" stroke-width="0.7" opacity="0.6"/>
+    <line x1="620" y1="220" x2="760" y2="330" stroke="#00c2ff" stroke-width="0.7" opacity="0.3"/>
+
+    <line x1="620" y1="280" x2="760" y2="190" stroke="#00c2ff" stroke-width="0.7" opacity="0.3"/>
+    <line x1="620" y1="280" x2="760" y2="260" stroke="#00c2ff" stroke-width="0.7" opacity="0.5"/>
+    <line x1="620" y1="280" x2="760" y2="330" stroke="#00c2ff" stroke-width="0.7" opacity="0.6"/>
+
+    <line x1="620" y1="340" x2="760" y2="190" stroke="#00c2ff" stroke-width="0.7" opacity="0.2"/>
+    <line x1="620" y1="340" x2="760" y2="260" stroke="#00c2ff" stroke-width="0.7" opacity="0.4"/>
+    <line x1="620" y1="340" x2="760" y2="330" stroke="#00c2ff" stroke-width="0.7" opacity="0.5"/>
+
+    <!-- Hidden2 → Output -->
+    <line x1="760" y1="190" x2="890" y2="230" stroke="#00ffaa" stroke-width="0.8" opacity="0.5"/>
+    <line x1="760" y1="190" x2="890" y2="300" stroke="#00ffaa" stroke-width="0.8" opacity="0.2"/>
+    <line x1="760" y1="260" x2="890" y2="230" stroke="#00ffaa" stroke-width="0.8" opacity="0.6"/>
+    <line x1="760" y1="260" x2="890" y2="300" stroke="#00ffaa" stroke-width="0.8" opacity="0.4"/>
+    <line x1="760" y1="330" x2="890" y2="230" stroke="#00ffaa" stroke-width="0.8" opacity="0.3"/>
+    <line x1="760" y1="330" x2="890" y2="300" stroke="#00ffaa" stroke-width="0.8" opacity="0.6"/>
+
+    <!-- Input nodes -->
+    <circle cx="480" cy="180" r="8" fill="#0d2240" stroke="#0057b8" stroke-width="1.5"/>
+    <circle cx="480" cy="250" r="8" fill="#0d2240" stroke="#0057b8" stroke-width="1.5"/>
+    <circle cx="480" cy="320" r="8" fill="#0d2240" stroke="#0057b8" stroke-width="1.5"/>
+    <circle cx="480" cy="390" r="8" fill="#0d2240" stroke="#0057b8" stroke-width="1.5"/>
+
+    <!-- Hidden layer 1 nodes -->
+    <circle cx="620" cy="160" r="9" fill="#0d2240" stroke="#00c2ff" stroke-width="1.8" filter="url(#glow)"/>
+    <circle cx="620" cy="220" r="9" fill="#0d2240" stroke="#00c2ff" stroke-width="1.8" filter="url(#glow)"/>
+    <circle cx="620" cy="280" r="9" fill="#0d2240" stroke="#00c2ff" stroke-width="1.8" filter="url(#glow)"/>
+    <circle cx="620" cy="340" r="9" fill="#0d2240" stroke="#00c2ff" stroke-width="1.8" filter="url(#glow)"/>
+
+    <!-- Hidden layer 2 nodes -->
+    <circle cx="760" cy="190" r="9" fill="#0d2240" stroke="#00c2ff" stroke-width="1.8" filter="url(#glow)"/>
+    <circle cx="760" cy="260" r="9" fill="#0d2240" stroke="#00c2ff" stroke-width="1.8" filter="url(#glow)"/>
+    <circle cx="760" cy="330" r="9" fill="#0d2240" stroke="#00c2ff" stroke-width="1.8" filter="url(#glow)"/>
+
+    <!-- Output nodes -->
+    <circle cx="890" cy="230" r="10" fill="#0d2240" stroke="#00ffaa" stroke-width="2" filter="url(#glow)"/>
+    <circle cx="890" cy="300" r="10" fill="#0d2240" stroke="#00ffaa" stroke-width="2" filter="url(#glow)"/>
+
+    <!-- Layer labels -->
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       SIGNAL PROCESSING WAVEFORM (center bottom)
+  ═══════════════════════════════════════════ -->
+  <g opacity="0.55">
+    <!-- Axis -->
+    <line x1="230" y1="620" x2="870" y2="620" stroke="#1e4a7a" stroke-width="0.8" opacity="0.6"/>
+    <line x1="230" y1="570" x2="230" y2="670" stroke="#1e4a7a" stroke-width="0.8" opacity="0.6"/>
+    <!-- Raw noisy signal -->
+    <polyline points="230,620 240,605 250,630 260,595 270,635 280,610 290,628 300,598 310,640 320,605 330,622 340,592 350,638 360,608 370,625 380,600 390,632 400,612 410,619 420,595 430,641 440,608 450,624 460,598 470,635 480,610 490,626 500,602 510,638 520,605 530,622"
+          stroke="#0057b8" stroke-width="1.2" fill="none" opacity="0.5"/>
+    <!-- Filtered/clean signal -->
+    <path d="M230,620 C260,600 290,640 320,620 C350,600 380,640 410,620 C440,600 470,640 500,620 C530,600 560,640 590,620 C620,600 650,640 680,620 C710,600 740,640 770,620 C800,600 830,640 860,620"
+          stroke="#00c2ff" stroke-width="2" fill="none" filter="url(#glow)"/>
+    <!-- FFT frequency domain representation -->
+    <line x1="600" y1="570" x2="870" y2="570" stroke="#1e4a7a" stroke-width="0.6" opacity="0.4"/>
+    <rect x="615" y="555" width="4" height="15" fill="#00ffaa" opacity="0.2"/>
+    <rect x="625" y="548" width="4" height="22" fill="#00ffaa" opacity="0.35"/>
+    <rect x="635" y="542" width="4" height="28" fill="#00ffaa" opacity="0.5"/>
+    <rect x="645" y="535" width="4" height="35" fill="#00ffaa" opacity="0.7"/>
+    <rect x="655" y="530" width="4" height="40" fill="#00ffaa" opacity="0.9"/>
+    <rect x="665" y="537" width="4" height="33" fill="#00ffaa" opacity="0.6"/>
+    <rect x="675" y="548" width="4" height="22" fill="#00ffaa" opacity="0.4"/>
+    <rect x="685" y="558" width="4" height="12" fill="#00ffaa" opacity="0.25"/>
+    <rect x="695" y="563" width="4" height="7"  fill="#00ffaa" opacity="0.15"/>
+    <rect x="720" y="562" width="4" height="8"  fill="#00c2ff" opacity="0.2"/>
+    <rect x="730" y="555" width="4" height="15" fill="#00c2ff" opacity="0.35"/>
+    <rect x="740" y="548" width="4" height="22" fill="#00c2ff" opacity="0.5"/>
+    <rect x="750" y="542" width="4" height="28" fill="#00c2ff" opacity="0.65"/>
+    <rect x="760" y="537" width="4" height="33" fill="#00c2ff" opacity="0.5"/>
+    <rect x="770" y="550" width="4" height="20" fill="#00c2ff" opacity="0.35"/>
+    <rect x="780" y="560" width="4" height="10" fill="#00c2ff" opacity="0.2"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       SYSTEMS ENGINEERING V-MODEL (bottom left)
+  ═══════════════════════════════════════════ -->
+  <g opacity="0.5">
+    <!-- V-model lines -->
+    <polyline points="30,700 90,730 150,755 210,775 270,790 330,775 390,755 450,730 510,700"
+              stroke="#f0a500" stroke-width="1.2" fill="none" opacity="0.5"/>
+    <!-- V-model nodes -->
+    <circle cx="30"  cy="700" r="5" fill="#f0a500" opacity="0.8"/>
+    <circle cx="90"  cy="730" r="4" fill="#f0a500" opacity="0.7"/>
+    <circle cx="150" cy="755" r="4" fill="#f0a500" opacity="0.6"/>
+    <circle cx="210" cy="775" r="4" fill="#f0a500" opacity="0.5"/>
+    <circle cx="270" cy="790" r="6" fill="#f0a500" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="330" cy="775" r="4" fill="#00ffaa" opacity="0.5"/>
+    <circle cx="390" cy="755" r="4" fill="#00ffaa" opacity="0.6"/>
+    <circle cx="450" cy="730" r="4" fill="#00ffaa" opacity="0.7"/>
+    <circle cx="510" cy="700" r="5" fill="#00ffaa" opacity="0.8"/>
+    <!-- Labels -->
+    <!-- Horizontal verification arrows -->
+    <line x1="30"  y1="700" x2="510" y2="700" stroke="#1e4a7a" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.3"/>
+    <line x1="90"  y1="730" x2="450" y2="730" stroke="#1e4a7a" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.3"/>
+    <line x1="150" y1="755" x2="390" y2="755" stroke="#1e4a7a" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.3"/>
+    <line x1="210" y1="775" x2="330" y2="775" stroke="#1e4a7a" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.3"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       PROGRAM MANAGEMENT GANTT / TIMELINE (bottom right)
+  ═══════════════════════════════════════════ -->
+  <g opacity="0.5">
+    <!-- Gantt bars -->
+    <rect x="900" y="672" width="120" height="12" rx="2" fill="#0057b8" opacity="0.7"/>
+    <rect x="900" y="690" width="200" height="12" rx="2" fill="#0057b8" opacity="0.5"/>
+    <rect x="1020" y="690" width="80"  height="12" rx="2" fill="#00c2ff" opacity="0.5"/>
+    <rect x="900" y="708" width="80"  height="12" rx="2" fill="#0057b8" opacity="0.4"/>
+    <rect x="980" y="708" width="160" height="12" rx="2" fill="#00c2ff" opacity="0.6"/>
+    <rect x="1140" y="708" width="60" height="12" rx="2" fill="#00ffaa" opacity="0.5"/>
+    <rect x="900" y="726" width="50"  height="12" rx="2" fill="#0057b8" opacity="0.3"/>
+    <rect x="950" y="726" width="100" height="12" rx="2" fill="#00c2ff" opacity="0.5"/>
+    <rect x="1050" y="726" width="150" height="12" rx="2" fill="#00ffaa" opacity="0.6"/>
+    <rect x="1200" y="726" width="60" height="12" rx="2" fill="#f0a500" opacity="0.5"/>
+    <rect x="900" y="744" width="300" height="12" rx="2" fill="#00ffaa" opacity="0.4"/>
+    <rect x="1200" y="744" width="100" height="12" rx="2" fill="#f0a500" opacity="0.6"/>
+    <!-- Milestone diamonds -->
+    <polygon points="1020,672 1026,678 1020,684 1014,678" fill="#f0a500" opacity="0.9" filter="url(#glow)"/>
+    <polygon points="1100,708 1106,714 1100,720 1094,714" fill="#f0a500" opacity="0.8" filter="url(#glow)"/>
+    <polygon points="1200,726 1206,732 1200,738 1194,732" fill="#f0a500" opacity="0.9" filter="url(#glow)"/>
+    <!-- Phase labels -->
+    <!-- Tick marks -->
+    <line x1="900"  y1="668" x2="900"  y2="760" stroke="#1e4a7a" stroke-width="0.5" opacity="0.4"/>
+    <line x1="980"  y1="668" x2="980"  y2="760" stroke="#1e4a7a" stroke-width="0.5" opacity="0.4"/>
+    <line x1="1060" y1="668" x2="1060" y2="760" stroke="#1e4a7a" stroke-width="0.5" opacity="0.4"/>
+    <line x1="1140" y1="668" x2="1140" y2="760" stroke="#1e4a7a" stroke-width="0.5" opacity="0.4"/>
+    <line x1="1220" y1="668" x2="1220" y2="760" stroke="#1e4a7a" stroke-width="0.5" opacity="0.4"/>
+    <line x1="1300" y1="668" x2="1300" y2="760" stroke="#1e4a7a" stroke-width="0.5" opacity="0.4"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       CIRCUIT TRACES (top right decoration)
+  ═══════════════════════════════════════════ -->
+  <g stroke="#1e4a7a" stroke-width="1" fill="none" opacity="0.35">
+    <polyline points="1300,50 1380,50 1380,120 1450,120 1450,80 1530,80 1530,140 1600,140"/>
+    <polyline points="1350,50 1350,90 1420,90 1420,150 1500,150 1500,100 1580,100"/>
+    <polyline points="1300,180 1360,180 1360,130 1430,130 1430,170 1510,170 1510,110 1580,110"/>
+    <!-- Component pads -->
+    <rect x="1375" y="45"  width="10" height="10" rx="1" fill="#1e4a7a" opacity="0.5"/>
+    <rect x="1445" y="75"  width="10" height="10" rx="1" fill="#1e4a7a" opacity="0.5"/>
+    <rect x="1525" y="135" width="10" height="10" rx="1" fill="#00c2ff" opacity="0.3" stroke="#00c2ff"/>
+    <rect x="1415" y="125" width="10" height="10" rx="1" fill="#1e4a7a" opacity="0.5"/>
+    <rect x="1355" y="125" width="10" height="10" rx="1" fill="#00c2ff" opacity="0.3" stroke="#00c2ff"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       CORNER DECORATIONS
+  ═══════════════════════════════════════════ -->
+  <!-- Top-left bracket -->
+  <g stroke="#00c2ff" stroke-width="1.5" fill="none" opacity="0.25">
+    <polyline points="0,40 0,0 40,0"/>
+  </g>
+  <!-- Top-right bracket -->
+  <g stroke="#00c2ff" stroke-width="1.5" fill="none" opacity="0.25">
+    <polyline points="1560,0 1600,0 1600,40"/>
+  </g>
+  <!-- Bottom-left bracket -->
+  <g stroke="#00c2ff" stroke-width="1.5" fill="none" opacity="0.25">
+    <polyline points="0,860 0,900 40,900"/>
+  </g>
+  <!-- Bottom-right bracket -->
+  <g stroke="#00c2ff" stroke-width="1.5" fill="none" opacity="0.25">
+    <polyline points="1560,900 1600,900 1600,860"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       FLOATING DATA / HEX (subtle overlay)
+  ═══════════════════════════════════════════ -->
+
+  <!-- Overall dark vignette to let content read cleanly -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="0%"   style="stop-color:#000000;stop-opacity:0"/>
+    <stop offset="100%" style="stop-color:#000000;stop-opacity:0.55"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+</svg>
