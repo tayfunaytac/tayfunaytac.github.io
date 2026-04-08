@@ -352,12 +352,12 @@
 
     /* ── CERTS ── */
     #certs { background: var(--bg); }
-    .cert-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
     .cert-card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 10px; padding: 1rem 1.2rem;
       display: flex; align-items: center; gap: 0.8rem;
-      min-width: 240px; transition: border-color 0.2s;
+      transition: border-color 0.2s;
     }
     .cert-card:hover { border-color: var(--gold); }
     .cert-icon {
@@ -445,17 +445,16 @@
     <!-- Layer 1: Identity -->
     <div class="hero-layer hero-layer--identity">
       <h1 class="hero-name">Tayfun Aytaç</h1>
-      <p class="hero-title">Director, Electronic Warfare &amp; Self-Protection Systems Programs</p>
+      <p class="hero-title">Director, Electronic Warfare &amp; Self-Protection Systems</p>
     </div>
 
     <!-- Layer 2: Authority -->
     <div class="hero-layer hero-layer--authority">
-      <p class="hero-subtitle">Architecting and directing national-scale multi-domain electronic warfare capabilities</p>
+      <p class="hero-subtitle">Architecting and directing national-scale, multi-domain electronic warfare capabilities</p>
       <p class="hero-inst">
+        Advanced Technologies Research Institute (<a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener" class="org-link">İLTAREN</a>),
         <a href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener" class="org-link">TÜBİTAK</a>
         <a href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener" class="org-link">BİLGEM</a>
-        <a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener" class="org-link">İLTAREN</a>
-        — Advanced Technologies Research Institute (İLTAREN), TÜBİTAK BİLGEM
       </p>
     </div>
 
@@ -474,8 +473,8 @@
       <span class="tag">Self-Protection Systems</span>
       <span class="tag">Systems Engineering</span>
 
-      <span class="tag">Program Management</span>
-      <span class="tag">Portfolio Management</span>
+      <span class="tag">Strategic Program Leadership</span>
+      <span class="tag">Defense Capability Portfolio Management</span>
     </div>
 
     <div class="hero-creds">
@@ -486,7 +485,7 @@
 
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-num">25+</div>
+        <div class="stat-num">20+</div>
         <div class="stat-lbl">Years in Defense R&amp;D</div>
       </div>
       <div class="stat">
@@ -524,7 +523,7 @@
     <div class="about-grid">
       <div class="about-text">
         <p>
-          Defense R&amp;D executive with 25+ years leading national-scale Electronic Warfare (EW) programs
+          Defense R&amp;D executive with 20+ years leading national-scale Electronic Warfare (EW) programs
           at <a href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener" class="org-link">TÜBİTAK</a>
           <a href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener" class="org-link">BİLGEM</a>
           <a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener" class="org-link">İLTAREN</a>,
@@ -553,8 +552,8 @@
           <span class="comp-chip">Electronic Warfare</span>
           <span class="comp-chip">Self-Protection Systems</span>
           <span class="comp-chip">Systems Engineering</span>
-          <span class="comp-chip">Program Management</span>
-          <span class="comp-chip">Portfolio Management</span>
+          <span class="comp-chip">Strategic Program Leadership</span>
+          <span class="comp-chip">Defense Capability Portfolio Management</span>
           <span class="comp-chip">R&amp;D Strategy &amp; Portfolio</span>
 
           <span class="comp-chip">Infrared Sensor-based Target Detection, Tracking &amp; Classification</span>
@@ -577,10 +576,9 @@
         <div class="timeline-dot"></div>
         <div class="timeline-card">
           <div class="timeline-org" style="margin-bottom:1rem;">
+            Advanced Technologies Research Institute (<a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener" class="org-link">İLTAREN</a>),
             <a href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener" class="org-link">TÜBİTAK</a>
             <a href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener" class="org-link">BİLGEM</a>
-            <a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener" class="org-link">İLTAREN</a>
-            Advanced Technologies Research Institute
           </div>
 
           <div class="sub-role">
@@ -589,7 +587,7 @@
               <span class="timeline-period">Aug 2021 – Present</span>
             </div>
             <ul class="exp-bullets">
-              <li>Lead and scale a 300+ multidisciplinary engineering organization delivering national EW capabilities across domains.</li>
+              <li>Lead and scale a 300+ multidisciplinary engineering organization delivering sovereign electronic warfare capabilities across domains.</li>
               <li>Direct large-scale electronic warfare programs integrating RF and EO/IR capabilities across domains, delivering operational systems under stringent performance and schedule constraints.</li>
             </ul>
           </div>
@@ -607,9 +605,9 @@
               <span class="timeline-period">May 2019 – Sep 2021</span>
             </div>
             <ul class="exp-bullets">
-              <li>Managed the self-protection subsystem for the Air Stand Off Jammer (ASOJ) Program.</li>
+              <li>Project Control Level Responsible for the self-protection subsystem for the Air Stand Off Jammer (ASOJ) Program.</li>
               <li>Contributed to the development of ASELSAN's next-gen Smart Counter Measure Dispensing System (KARTACA).</li>
-              <li>Led work packages for CMDS in ASOJ and the KAAN 5th Gen. National Fighter Jet Program.</li>
+              <li>Led technically work packages for CMDS in ASOJ and the KAAN 5th Gen. National Fighter Jet Program.</li>
             </ul>
           </div>
         </div>
@@ -620,10 +618,9 @@
         <div class="timeline-dot past"></div>
         <div class="timeline-card">
           <div class="timeline-org" style="margin-bottom:1rem;">
+            Advanced Technologies Research Institute (<a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener" class="org-link">İLTAREN</a>),
             <a href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener" class="org-link">TÜBİTAK</a>
             <a href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener" class="org-link">BİLGEM</a>
-            <a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener" class="org-link">İLTAREN</a>
-            Advanced Technologies Research Institute
           </div>
 
           <div class="sub-role">
@@ -636,7 +633,7 @@
               <li>Led simulation and modeling studies for IR/EO systems and algorithm development.</li>
               <li>Coordinated project proposals for infrared based missile warning and directed infrared countermeasure systems.</li>
               <li>Managed the "Infrared Seeker Effectiveness Test and Analysis System" (Phase 1).</li>
-              <li>Participated in NATO EW trials in Germany (2015) and France (2014).</li>
+              <li>Participated in NATO EW trials in Germany and France.</li>
               <li>Coordinated work packages for "IR hardware-in-the-loop" and "IR digital tactical simulator."</li>
             </ul>
           </div>
@@ -753,10 +750,10 @@
 
     <div class="case-card primary" style="margin-bottom: 1.5rem;">
       <div class="case-title">National Multi-Domain Electronic Warfare Capability Program</div>
-      <p class="hero-subtitle">Directing the development, deployment, and sustainment of next-generation electronic warfare systems</p>
+      <p class="hero-subtitle">Directing the development and sustainment of next-generation electronic warfare systems</p>
       <ul style="margin-top: 0.75rem; padding-left: 1.2rem;">
         <li>Lead 300+ technical staff delivering integrated electronic warfare effects across domains from architecture through qualification, acceptance, and operational deployment.</li>
-        <li>Led operational deployment of EW capabilities across national defense platforms and supported transition into serial production.</li>
+        <li>Directed operational deployment of EW capabilities across national defense platforms and drove transition into serial production.</li>
       </ul>
     </div>
 
@@ -778,7 +775,7 @@
         </div>
       </div>
 
-      <!-- System 2 -->
+      <!-- System 3 -->
       <div class="flagship-card">
         <div class="flagship-type">Intelligence &amp; Surveillance</div>
         <div class="flagship-title">ESM / ELINT Systems</div>
@@ -794,7 +791,7 @@
         </div>
       </div>
 
-      <!-- System 3 -->
+      <!-- System 4 -->
       <div class="flagship-card">
         <div class="flagship-type">IR / EO Systems</div>
         <div class="flagship-title">MWS / DIRCM Systems</div>
@@ -810,7 +807,7 @@
         </div>
       </div>
 
-      <!-- System 4 -->
+      <!-- System 5 -->
       <div class="flagship-card">
         <div class="flagship-type">Countermeasures</div>
         <div class="flagship-title">Advanced IR/RF Countermeasures</div>
@@ -825,7 +822,7 @@
         </div>
       </div>
 
-      <!-- System 5 -->
+      <!-- System 6 -->
       <div class="flagship-card">
         <div class="flagship-type">Simulation &amp; Test Infrastructure</div>
         <div class="flagship-title">Hardware-in-the-Loop &amp; Digital EW Simulation</div>
@@ -841,35 +838,22 @@
         </div>
       </div>
 
-      <!-- System 6 -->
-      <div class="flagship-card">
-        <div class="flagship-type">Training &amp; Capability Development</div>
-        <div class="flagship-title">Electronic Warfare Support / Training Centers</div>
-        <div class="flagship-desc">
-          Established and directed EW support and training center infrastructure,
-          delivering operational training, EMSO education, and EW database
-          management capabilities to end-users and joint forces.
-        </div>
-        <div class="flagship-tags">
-          <span>EMSO Training</span>
-          <span>EW Database</span>
-          <span>Operational Readiness</span>
-        </div>
-      </div>
-
       <!-- System 7 -->
       <div class="flagship-card">
-        <div class="flagship-type">Engineering Support</div>
-        <div class="flagship-title">Electronic Warfare Engineering Support</div>
+        <div class="flagship-type">Engineering Support &amp; Training</div>
+        <div class="flagship-title">EW Engineering Support &amp; Training Centers</div>
         <div class="flagship-desc">
           Provided systems engineering support across the EW program lifecycle,
-          including requirements analysis, architecture design, integration,
-          and qualification activities for national defense programs.
+          including requirements analysis, architecture design, integration, and
+          qualification activities. Established and directed EW support and training
+          center infrastructure, delivering operational training, EMSO education,
+          and EW database management capabilities to end-users and joint forces.
         </div>
         <div class="flagship-tags">
           <span>Systems Engineering</span>
-          <span>Lifecycle Support</span>
-          <span>Qualification</span>
+          <span>EMSO Training</span>
+          <span>EW Database</span>
+          <span>Operational Readiness</span>
         </div>
       </div>
 
@@ -1382,7 +1366,7 @@
         <div class="feat-type">🎙 Panel · Nov 2024</div>
         <div class="feat-title">Invited Panelist — Electronic Warfare &amp; AI</div>
         <div class="feat-desc">
-          Defense Industry Artificial Intelligence Summit — Ankara, Türkiye, Nov 2024.
+          Defense Industry Artificial Intelligence Summit, hosted by the Defence Industry Agency (SSB) — Ankara, Türkiye, Nov 2024.
         </div>
       </div>
 
@@ -1390,7 +1374,7 @@
         <div class="feat-type">🎤 Invited Talk · Dec 2023</div>
         <div class="feat-title">Invited Speaker — National Electronic Warfare Symposium (SSB, 2023)</div>
         <div class="feat-desc">
-          "Applying Cognitive EW Concepts to Electro-optical Systems" — inaugural national Electronic Warfare Symposium, hosted by the Defence Industry Agency (SSB), Ankara, Dec 2023.
+          "Applying Cognitive EW Concepts to Electro-optical Systems" — inaugural national Electronic Warfare Symposium, hosted by the Defence Industry Agency (SSB), Ankara, Türkiye, Dec 2023.
         </div>
       </div>
 
@@ -1633,7 +1617,7 @@
 <footer>
   <div class="footer-name">Tayfun Aytaç</div>
   <div class="footer-sub">
-    Director, Electronic Warfare &amp; Self-Protection Systems Programs ·
+    Director, Electronic Warfare &amp; Self-Protection Systems ·
     <a href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener" class="org-link">TÜBİTAK</a>
     <a href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener" class="org-link">BİLGEM</a>
     <a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener" class="org-link">İLTAREN</a>
