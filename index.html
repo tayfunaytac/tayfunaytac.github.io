@@ -72,19 +72,19 @@
 
     /* ── HERO ── */
     header {
-      min-height: 100vh;
+      min-height: 84vh;
       display: flex; align-items: center; justify-content: center;
-      padding: 80px 2rem 2rem;
+      padding: 68px 2rem 1.2rem;
       position: relative; overflow: hidden;
       background:
-        radial-gradient(circle at 50% 25%, rgba(0,194,255,0.10), transparent 45%),
+        radial-gradient(circle at 50% 25%, rgba(0,194,255,0.06), transparent 42%),
         linear-gradient(135deg, #0b0e13 0%, #0d1520 100%);
     }
     .hero-grid { display: none; }
     .hero-glow {
-      position: absolute; top: 20%; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,194,255,0.06) 0%, transparent 70%);
+      position: absolute; top: 18%; left: 50%; transform: translateX(-50%);
+      width: 440px; height: 440px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,194,255,0.03) 0%, transparent 74%);
       pointer-events: none;
     }
     .hero-content {
@@ -94,33 +94,18 @@
       margin-bottom: 1.5rem;
     }
     .hero-avatar img {
-      width: 130px;
-      height: 130px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
-      border: 2px solid rgba(0,194,255,0.75);
-      box-shadow: 0 0 14px rgba(0,194,255,0.16);
+      border: 2px solid rgba(0,194,255,0.65);
+      box-shadow: 0 0 10px rgba(0,194,255,0.12);
       filter: grayscale(15%);
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid var(--accent); border-radius: 999px;
-      padding: 0.3rem 1rem; font-size: 0.78rem; color: var(--accent);
-      letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
-      margin-bottom: 1.5rem;
-      animation: fadeUp 0.6s ease both;
-    }
-    .hero-badge .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: none;
     }
 
     .hero-name {
-      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
       font-weight: 800; letter-spacing: -0.02em;
       line-height: 1.1;
       background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
@@ -132,17 +117,13 @@
       color: var(--accent); font-size: 1.8rem;
       vertical-align: middle; -webkit-text-fill-color: var(--accent);
     }
-    .hero-subtitle {
-      margin-top: 0.4rem; font-size: 0.95rem; color: var(--muted);
-      font-style: italic; animation: fadeUp 0.6s 0.19s ease both;
-    }
     .hero-inst {
-      margin-top: 0.5rem; font-size: 1rem; color: var(--text);
+      margin-top: 0.4rem; font-size: 1rem; color: var(--text);
       font-weight: 600; letter-spacing: 0.01em;
       animation: fadeUp 0.6s 0.18s ease both;
     }
     .hero-title {
-      margin-top: 0.3rem; font-size: 1.05rem; color: var(--muted);
+      margin-top: 0.2rem; font-size: 1.05rem; color: var(--muted);
       font-weight: 500; animation: fadeUp 0.6s 0.2s ease both;
     }
     .hero-contact {
@@ -156,10 +137,6 @@
       margin-top: 0.5rem; font-size: 0.88rem; color: var(--muted);
       animation: fadeUp 0.6s 0.25s ease both;
     }
-    .hero-address {
-      margin-top: 0.25rem; font-size: 0.82rem; color: var(--muted);
-      animation: fadeUp 0.6s 0.28s ease both;
-    }
     /* Hero layers */
     .hero-layer { animation: fadeUp 0.6s ease both; }
     .hero-layer--identity { margin-bottom: 1.2rem; }
@@ -170,7 +147,7 @@
     }
     .hero-layer--access { opacity: 0.75; }
     .hero-tags {
-      margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.5rem;
       justify-content: center; animation: fadeUp 0.6s 0.3s ease both;
     }
     .tag {
@@ -179,19 +156,8 @@
       font-size: 0.78rem; color: var(--accent); font-weight: 600;
       letter-spacing: 0.04em;
     }
-    .hero-creds {
-      margin-top: 1.5rem; display: flex; gap: 1rem;
-      justify-content: center; flex-wrap: wrap;
-      animation: fadeUp 0.6s 0.35s ease both;
-    }
-    .cred {
-      display: flex; align-items: center; gap: 0.4rem;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 8px; padding: 0.4rem 0.9rem;
-      font-size: 0.82rem; font-weight: 700; color: var(--gold);
-    }
     .hero-stats {
-      margin-top: 3rem; display: flex; gap: 2.5rem;
+      margin-top: 1.6rem; display: flex; gap: 2rem;
       justify-content: center; flex-wrap: wrap;
       animation: fadeUp 0.6s 0.4s ease both;
     }
@@ -218,7 +184,7 @@
     }
 
     /* ── SECTIONS ── */
-    section { padding: 5rem 1.5rem; }
+    section { padding: 4.5rem 1.5rem; }
     .container { max-width: 1000px; margin: 0 auto; }
     .section-label {
       font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
@@ -279,7 +245,7 @@
     .timeline-card:hover { border-color: var(--accent); transform: translateX(4px); }
     .timeline-top { display: flex; justify-content: space-between; align-items: flex-start;
       flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem; }
-    .timeline-role { font-size: 1.05rem; font-weight: 700; color: #fff; }
+    .timeline-role { font-size: 1rem; font-weight: 700; color: #fff; }
     .timeline-period {
       font-size: 0.78rem; color: var(--accent); background: var(--tag-bg);
       border: 1px solid var(--border); border-radius: 999px;
@@ -333,7 +299,7 @@
       font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--accent); font-weight: 700; margin-bottom: 0.6rem;
     }
-    .feat-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+    .feat-title { font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
     .feat-desc { font-size: 0.83rem; color: var(--muted); }
 
     /* ── EDUCATION ── */
@@ -375,18 +341,6 @@
     .cert-org { font-size: 0.78rem; color: var(--muted); }
     .cert-exp { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
 
-    /* ── RECOMMENDATIONS ── */
-    #recommendations { background: var(--surface); }
-    .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
-    .rec-card {
-      background: var(--surface2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.5rem;
-    }
-    .rec-quote { font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
-    .rec-text { font-size: 0.88rem; color: var(--muted); font-style: italic; margin-bottom: 1rem; }
-    .rec-author { font-weight: 700; color: var(--text); font-size: 0.88rem; }
-    .rec-role { font-size: 0.78rem; color: var(--muted); }
-
     /* ── FOOTER ── */
     footer {
       background: var(--surface); border-top: 1px solid var(--border);
@@ -404,7 +358,6 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
       .about-grid { grid-template-columns: 1fr; }
-      .rec-grid { grid-template-columns: 1fr; }
       .nav-links { gap: 1rem; }
     }
   </style>
@@ -459,7 +412,6 @@
 
     <!-- Layer 2: Authority -->
     <div class="hero-layer hero-layer--authority">
-      <p class="hero-subtitle">Leading research and development in electronic warfare, self-protection, and EO/IR technologies</p>
     </div>
 
     <!-- Layer 3: Access -->
@@ -497,7 +449,6 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <div class="section-label">Profile</div>
     <h2 class="section-title">About</h2>
     <div class="section-divider"></div>
     <div class="about-grid">
@@ -515,12 +466,10 @@
           domains — from concept development through qualification, acceptance, and operational deployment.
           Multiple programs have successfully transitioned into serial production.
         </p>
-        <p>
-          Co-author of 50+ peer-reviewed publications (15 journals, 35+ conferences,
-          <a href="https://scholar.google.com/citations?user=d68PAlAAAAAJ&hl=en" target="_blank" rel="noopener" class="scholar-link">350+ citations, h-index: 13</a>)
-          in infrared sensor-based target detection and tracking.
-        </p>
         <div class="about-langs">
+          <span class="lang-chip">🎓 PhD in Electrical &amp; Electronics Engineering</span>
+          <span class="lang-chip">⚙️ INCOSE CSEP</span>
+          <span class="lang-chip">📋 PMP®</span>
           <span class="lang-chip">🇬🇧 English — Professional</span>
           <span class="lang-chip">🇩🇪 German — Professional</span>
           <span class="lang-chip">🇹🇷 Turkish — Native</span>
@@ -531,12 +480,11 @@
         <div class="competency-chips">
           <span class="comp-chip">Electronic Warfare</span>
           <span class="comp-chip">Self-Protection Systems</span>
-          <span class="comp-chip">Systems Engineering · ⚙️ INCOSE CSEP</span>
-          <span class="comp-chip">Strategic Program Leadership · 📋 PMP®</span>
+          <span class="comp-chip">Systems Engineering</span>
+          <span class="comp-chip">Strategic Program Leadership</span>
           <span class="comp-chip">R&amp;D Strategy &amp; Portfolio</span>
 
           <span class="comp-chip">Infrared Sensor-based Target Detection, Tracking &amp; Classification</span>
-          <span class="comp-chip">🎓 PhD in Electrical &amp; Electronics Engineering</span>
         </div>
 
       </div>
@@ -547,7 +495,6 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
-    <div class="section-label">Career</div>
     <h2 class="section-title">Leadership &amp; Work Experience</h2>
     <div class="section-divider"></div>
     <div class="timeline">
@@ -615,7 +562,7 @@
 
           <div class="sub-role">
             <div class="sub-role-header">
-              <span class="sub-role-title">IR-EO Technologies Department Head / Project Management Process Responsible / Project Manager / Research Scientist</span>
+              <span class="sub-role-title">IR-EO Technologies Department Head</span>
               <span class="timeline-period">Nov 2006 – Feb 2019</span>
             </div>
             <ul class="exp-bullets">
@@ -702,7 +649,6 @@
 <!-- STRATEGIC DIRECTION -->
 <section id="strategic" style="background: var(--surface);">
   <div class="container">
-    <div class="section-label">Focus Areas</div>
     <h2 class="section-title">Focus Areas</h2>
     <div class="section-divider"></div>
     <ul class="strategic-list">
@@ -734,7 +680,6 @@
 <!-- FLAGSHIP SYSTEMS -->
 <section id="flagship" style="background: var(--bg);">
   <div class="container">
-    <div class="section-label">Strategic Programs</div>
     <h2 class="section-title">Flagship Programs &amp; Systems</h2>
     <div class="section-divider"></div>
 
@@ -914,7 +859,6 @@
 <!-- PUBLICATIONS -->
 <section id="publications">
   <div class="container">
-    <div class="section-label">Research</div>
     <h2 class="section-title">Publications</h2>
     <div class="section-divider"></div>
     <p style="color:var(--muted); margin-bottom:2rem; font-size:0.9rem;">
@@ -1284,7 +1228,6 @@
 <!-- EDUCATION -->
 <section id="education">
   <div class="container">
-    <div class="section-label">Academic Background</div>
     <h2 class="section-title">Education</h2>
     <div class="section-divider"></div>
     <div class="edu-grid">
@@ -1338,7 +1281,6 @@
 <!-- FEATURED -->
 <section id="featured">
   <div class="container">
-    <div class="section-label">Keynotes</div>
     <h2 class="section-title">Visibility &amp; Keynotes</h2>
     <div class="section-divider"></div>
     <div class="feat-grid">
@@ -1374,7 +1316,6 @@
 <!-- PROFESSIONAL ACTIVITIES -->
 <section id="activities" style="background: var(--bg);">
   <div class="container">
-    <div class="section-label">Service &amp; Engagement</div>
     <h2 class="section-title">Professional Activities &amp; Affiliations</h2>
     <div class="section-divider"></div>
     <!-- Group 1: Academic & Advisory -->
@@ -1444,7 +1385,7 @@
       <li class="activity-item">
         <span class="activity-icon">📰</span>
         <div>
-          <span class="activity-type">Press · Laser Focus World · Mar 2004</span>
+          <span class="activity-type">Press</span>
           Featured in Laser Focus World for Infrared Sensing Research — Work on infrared sensor-based surface characterization was highlighted in Laser Focus World, the leading trade magazine in laser science.
           <a href="https://www.laserfocusworld.com/detectors-imaging/article/16550007/simple-sensor-characterizes-surfaces" target="_blank" rel="noopener" class="org-link">J. Wallace, "Simple Sensor Characterizes Surfaces," Laser Focus World, 40(3): 38-39, Mar 2004 ↗</a>
         </div>
