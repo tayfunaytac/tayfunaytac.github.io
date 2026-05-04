@@ -1,963 +1,1332 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tayfun Aytaç is an Electronic Warfare and Defense R&D executive leading advanced technology programs at TÜBİTAK BİLGEM İLTAREN." />
-  <meta property="og:title" content="Tayfun Aytaç — Electronic Warfare & Defense R&D Executive" />
-  <meta property="og:description" content="Defense R&D executive focused on electronic warfare, AI-enabled sensing, and national-scale technology programs." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Tayfun Aytaç — Electronic Warfare & Defense R&D Executive" />
-  <meta name="twitter:description" content="Electronic Warfare, AI-enabled sensing, and defense R&D leadership." />
-  <title>Tayfun Aytaç — Electronic Warfare & Defense R&D Executive</title>
-  <style>
-/* === block 1 === */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:        #0b0e13;
-      --surface:   #111620;
-      --surface2:  #161c28;
-      --border:    #1e2d45;
-      --accent:    #00c2ff;
-      --accent2:   #0057b8;
-      --gold:      #f0a500;
-      --text:      #d8e4f0;
-      --muted:     #6b82a0;
-      --tag-bg:    #0d2240;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(11,14,19,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 58px;
-    }
-    .nav-brand {
-      font-weight: 700; font-size: 1rem; letter-spacing: 0.04em;
-      color: var(--accent); text-decoration: none; flex-shrink: 0;
-    }
-    .nav-links { display: flex; gap: 1.2rem; flex-wrap: nowrap; }
-    .nav-links a {
-      color: var(--muted); text-decoration: none; font-size: 0.75rem;
-      letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;
-      transition: color 0.2s; white-space: nowrap;
-    }
-    .nav-links a:hover { color: var(--accent); }
-    /* Hamburger for small screens */
-    .nav-toggle {
-      display: none; background: none; border: none;
-      cursor: pointer; flex-direction: column; gap: 5px; padding: 4px;
-    }
-    .nav-toggle span {
-      display: block; width: 22px; height: 2px;
-      background: var(--accent); border-radius: 2px; transition: 0.3s;
-    }
-    @media (max-width: 820px) {
-      .nav-toggle { display: flex; }
-      .nav-links {
-        display: none; position: absolute; top: 58px; left: 0; right: 0;
-        background: rgba(11,14,19,0.98); border-bottom: 1px solid var(--border);
-        flex-direction: column; gap: 0; padding: 0.5rem 0;
-      }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 0.7rem 2rem; font-size: 0.85rem; }
-    }
-
-    /* ── HERO ── */
-    header {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      padding: 80px 2rem 2rem;
-      position: relative; overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 25%, rgba(0,194,255,0.10), transparent 45%),
-        linear-gradient(135deg, #0b0e13 0%, #0d1520 100%);
-    }
-    .hero-grid { display: none; }
-    .hero-glow {
-      position: absolute; top: 20%; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,194,255,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-content {
-      position: relative; max-width: 800px; text-align: center;
-    }
-    .hero-avatar {
-      margin-bottom: 1.5rem;
-    }
-    .hero-avatar img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 2px solid rgba(0,194,255,0.75);
-      box-shadow: 0 0 14px rgba(0,194,255,0.16);
-      filter: grayscale(15%);
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid var(--accent); border-radius: 999px;
-      padding: 0.3rem 1rem; font-size: 0.78rem; color: var(--accent);
-      letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
-      margin-bottom: 1.5rem;
-      animation: fadeUp 0.6s ease both;
-    }
-    .hero-badge .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: none;
-    }
-
-    .hero-name {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 800; letter-spacing: -0.02em;
-      line-height: 1.1;
-      background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      animation: fadeUp 0.6s 0.1s ease both;
-    }
-    .hero-verified {
-      display: inline-block; margin-left: 0.4rem;
-      color: var(--accent); font-size: 1.8rem;
-      vertical-align: middle; -webkit-text-fill-color: var(--accent);
-    }
-    .hero-subtitle {
-      margin-top: 0.4rem; font-size: 0.95rem; color: var(--muted);
-      font-style: italic; animation: fadeUp 0.6s 0.19s ease both;
-    }
-    .hero-inst {
-      margin-top: 0.5rem; font-size: 1rem; color: var(--text);
-      font-weight: 600; letter-spacing: 0.01em;
-      animation: fadeUp 0.6s 0.18s ease both;
-    }
-    .hero-title {
-      margin-top: 0.3rem; font-size: 1.05rem; color: var(--muted);
-      font-weight: 500; animation: fadeUp 0.6s 0.2s ease both;
-    }
-    .hero-contact {
-      margin-top: 0.4rem; font-size: 0.85rem;
-      animation: fadeUp 0.6s 0.22s ease both;
-    }
-    .hero-email { color: var(--accent); text-decoration: none; }
-    .hero-email:hover { text-decoration: underline; }
-    .hero-contact-sep { color: var(--muted); margin: 0 0.4rem; }
-    .hero-location {
-      margin-top: 0.5rem; font-size: 0.88rem; color: var(--muted);
-      animation: fadeUp 0.6s 0.25s ease both;
-    }
-    .hero-address {
-      margin-top: 0.25rem; font-size: 0.82rem; color: var(--muted);
-      animation: fadeUp 0.6s 0.28s ease both;
-    }
-    /* Hero layers */
-    .hero-layer { animation: fadeUp 0.6s ease both; }
-    .hero-layer--identity { margin-bottom: 1.2rem; }
-    .hero-layer--authority {
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero-layer--access { opacity: 0.95; }
-    .hero-ctas {
-      margin-top: 1.6rem; display: flex; gap: 0.75rem;
-      justify-content: center; flex-wrap: wrap;
-      animation: fadeUp 0.6s 0.25s ease both;
-    }
-    .hero-cta {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 0.7rem 1.3rem; border-radius: 8px;
-      font-size: 0.88rem; font-weight: 700; letter-spacing: 0.02em;
-      text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, color 0.2s ease;
-    }
-    .hero-cta:hover { transform: translateY(-2px); }
-    .hero-cta.primary {
-      background: var(--accent); color: var(--bg);
-      box-shadow: 0 6px 18px rgba(0, 194, 255, 0.25);
-    }
-    .hero-cta.primary:hover { box-shadow: 0 10px 24px rgba(0, 194, 255, 0.35); }
-    .hero-cta.secondary {
-      background: transparent; color: var(--accent);
-      border: 1px solid var(--accent);
-    }
-    .hero-cta.secondary:hover { background: rgba(0, 194, 255, 0.08); }
-    .hero-tags {
-      margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem;
-      justify-content: center; animation: fadeUp 0.6s 0.3s ease both;
-    }
-    .tag {
-      background: var(--tag-bg); border: 1px solid var(--border);
-      border-radius: 6px; padding: 0.3rem 0.8rem;
-      font-size: 0.78rem; color: var(--accent); font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-    .hero-creds {
-      margin-top: 1.5rem; display: flex; gap: 1rem;
-      justify-content: center; flex-wrap: wrap;
-      animation: fadeUp 0.6s 0.35s ease both;
-    }
-    .cred {
-      display: flex; align-items: center; gap: 0.4rem;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 8px; padding: 0.4rem 0.9rem;
-      font-size: 0.82rem; font-weight: 700; color: var(--gold);
-    }
-    .hero-stats {
-      margin-top: 3rem; display: flex; gap: 2.5rem;
-      justify-content: center; flex-wrap: wrap;
-      animation: fadeUp 0.6s 0.4s ease both;
-    }
-    .stat { text-align: center; }
-    .stat-num {
-      font-size: 2rem; font-weight: 800; color: var(--accent);
-      line-height: 1;
-    }
-    .stat-lbl { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .scroll-hint {
-      position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
-      color: var(--muted); font-size: 0.75rem; letter-spacing: 0.1em;
-      text-transform: uppercase; animation: bounce 2s infinite;
-    }
-    .scroll-hint svg { opacity: 0.5; }
-    @keyframes bounce {
-      0%,100% { transform: translateX(-50%) translateY(0); }
-      50%      { transform: translateX(-50%) translateY(6px); }
-    }
-
-    /* ── SECTIONS ── */
-    section { padding: 5rem 1.5rem; }
-    .container { max-width: 1000px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--accent); font-weight: 700; margin-bottom: 0.5rem;
-    }
-    .section-title {
-      font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800;
-      margin-bottom: 0.5rem; color: #fff;
-    }
-    .section-divider {
-      width: 48px; height: 3px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-      margin-bottom: 2.5rem; border-radius: 2px;
-    }
-
-    /* ── ABOUT ── */
-    #about { background: var(--surface); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-    .about-text p { color: var(--muted); margin-bottom: 1rem; }
-    .about-text p:first-child { color: var(--text); font-size: 1.05rem; }
-    .about-langs { margin-top: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .lang-chip {
-      background: var(--tag-bg); border: 1px solid var(--border);
-      border-radius: 6px; padding: 0.25rem 0.7rem;
-      font-size: 0.78rem; color: var(--text); font-weight: 600;
-    }
-    .about-skills h4 { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;
-      text-transform: uppercase; letter-spacing: 0.08em; }
-    .competency-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .comp-chip {
-      background: var(--tag-bg); border: 1px solid var(--border);
-      border-radius: 6px; padding: 0.4rem 0.85rem;
-      font-size: 0.82rem; color: var(--text); font-weight: 500;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .comp-chip:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* ── EXPERIENCE ── */
-    #experience { background: var(--bg); }
-    .timeline { position: relative; padding-left: 2rem; }
-    .timeline::before {
-      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-      width: 2px; background: linear-gradient(var(--accent), var(--border));
-    }
-    .timeline-item { position: relative; margin-bottom: 2.5rem; }
-    .timeline-dot {
-      position: absolute; left: -2.56rem; top: 0.35rem;
-      width: 14px; height: 14px; border-radius: 50%;
-      background: var(--accent); border: 3px solid var(--bg);
-      box-shadow: 0 0 12px var(--accent);
-    }
-    .timeline-dot.past { background: var(--border); box-shadow: none; }
-    .timeline-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.4rem 1.6rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .timeline-card:hover { border-color: var(--accent); transform: translateX(4px); }
-    .timeline-top { display: flex; justify-content: space-between; align-items: flex-start;
-      flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem; }
-    .timeline-role { font-size: 1.05rem; font-weight: 700; color: #fff; }
-    .timeline-period {
-      font-size: 0.78rem; color: var(--accent); background: var(--tag-bg);
-      border: 1px solid var(--border); border-radius: 999px;
-      padding: 0.15rem 0.7rem; font-weight: 600; white-space: nowrap;
-    }
-    .timeline-org { font-size: 0.88rem; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem; }
-    .timeline-desc { color: var(--muted); font-size: 0.9rem; }
-
-    /* ── PUBLICATIONS ── */
-    #publications { background: var(--surface); }
-    .pub-grid { display: grid; gap: 1.2rem; }
-    .pub-card {
-      background: var(--surface2); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.2rem 1.4rem;
-      display: flex; gap: 1rem; align-items: flex-start;
-      transition: border-color 0.2s;
-    }
-    .pub-card:hover { border-color: var(--accent); }
-    .pub-icon {
-      flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px;
-      background: var(--tag-bg); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent); font-size: 1rem;
-    }
-    .pub-title { font-weight: 700; color: var(--text); font-size: 0.9rem; margin-bottom: 0.3rem; }
-    .pub-meta { font-size: 0.78rem; color: var(--muted); }
-    .pub-badge {
-      display: inline-block; background: rgba(0,194,255,0.1);
-      border: 1px solid rgba(0,194,255,0.3); border-radius: 4px;
-      padding: 0.1rem 0.5rem; font-size: 0.72rem; color: var(--accent);
-      font-weight: 700; margin-left: 0.5rem; vertical-align: middle;
-    }
-
-    /* ── FEATURED ── */
-    #featured { background: var(--bg); }
-    .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
-    .feat-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.4rem;
-      transition: border-color 0.2s, transform 0.2s;
-      cursor: default; overflow: hidden;
-    }
-    .feat-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-    .feat-img {
-      display: block; margin-top: 1rem;
-      width: 100%; height: 180px;
-      object-fit: cover; object-position: center;
-      border-radius: 6px; border: 1px solid var(--border);
-    }
-    .feat-type {
-      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--accent); font-weight: 700; margin-bottom: 0.6rem;
-    }
-    .feat-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
-    .feat-desc { font-size: 0.83rem; color: var(--muted); }
-
-    /* ── EDUCATION ── */
-    #education { background: var(--surface); }
-    .edu-grid { display: grid; gap: 1.2rem; }
-    .edu-card {
-      background: var(--surface2); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.2rem 1.4rem;
-      display: grid; grid-template-columns: 1fr auto; gap: 0.5rem;
-      align-items: start;
-    }
-    .edu-degree { font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
-    .edu-school { color: var(--accent); font-size: 0.9rem; font-weight: 600; }
-    .edu-detail { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; }
-    .edu-period {
-      font-size: 0.78rem; color: var(--muted);
-      background: var(--tag-bg); border: 1px solid var(--border);
-      border-radius: 999px; padding: 0.15rem 0.7rem; white-space: nowrap;
-      align-self: start;
-    }
-
-    /* ── CERTS ── */
-    #certs { background: var(--bg); }
-    .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
-    .cert-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1rem 1.2rem;
-      display: flex; align-items: center; gap: 0.8rem;
-      transition: border-color 0.2s;
-    }
-    .cert-card:hover { border-color: var(--gold); }
-    .cert-icon {
-      width: 38px; height: 38px; border-radius: 8px;
-      background: linear-gradient(135deg, var(--accent2), var(--accent));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; flex-shrink: 0;
-    }
-    .cert-name { font-weight: 700; font-size: 0.9rem; color: var(--gold); }
-    .cert-org { font-size: 0.78rem; color: var(--muted); }
-    .cert-exp { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
-
-    /* ── RECOMMENDATIONS ── */
-    #recommendations { background: var(--surface); }
-    .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
-    .rec-card {
-      background: var(--surface2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.5rem;
-    }
-    .rec-quote { font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
-    .rec-text { font-size: 0.88rem; color: var(--muted); font-style: italic; margin-bottom: 1rem; }
-    .rec-author { font-weight: 700; color: var(--text); font-size: 0.88rem; }
-    .rec-role { font-size: 0.78rem; color: var(--muted); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--surface); border-top: 1px solid var(--border);
-      padding: 2rem 1.5rem; text-align: center;
-    }
-    .footer-name { font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-bottom: 0.3rem; }
-    .footer-sub { font-size: 0.8rem; color: var(--muted); }
-    .footer-links { margin-top: 1rem; display: flex; gap: 1rem; justify-content: center; }
-    .footer-links a {
-      color: var(--muted); font-size: 0.8rem; text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--accent); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .rec-grid { grid-template-columns: 1fr; }
-      .nav-links { gap: 1rem; }
-    }
-  
-
-/* === block 2 === */
-  .sub-role { margin-bottom: 1.2rem; }
-  .sub-role:last-child { margin-bottom: 0; }
-  .sub-role-header {
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem;
-  }
-  .sub-role-title {
-    font-weight: 700; color: #fff; font-size: 0.95rem;
-  }
-  .exp-bullets {
-    list-style: none; padding-left: 0;
-    display: flex; flex-direction: column; gap: 0.35rem;
-  }
-  .exp-bullets li {
-    color: var(--muted); font-size: 0.88rem; padding-left: 1.1rem;
-    position: relative;
-  }
-  .exp-bullets li::before {
-    content: '›'; position: absolute; left: 0;
-    color: var(--accent); font-weight: 700;
-  }
-  .timeline-card .sub-role + .sub-role {
-    border-top: 1px solid var(--border); padding-top: 1rem;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tayfun Aytaç — Electronic Warfare &amp; Defense R&amp;D Executive</title>
+<meta name="description" content="Tayfun Aytaç — Director of Advanced Technologies Research Institute (İLTAREN), TÜBİTAK BİLGEM. Leading national-scale R&D in electronic warfare, EO/IR systems, and AI-enabled sensing.">
+<meta property="og:title" content="Tayfun Aytaç — Electronic Warfare &amp; Defense R&amp;D Executive">
+<meta property="og:description" content="Director, TÜBİTAK BİLGEM İLTAREN. Defense R&D leadership in electronic warfare, AI-enabled sensing, and mission-critical systems.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://tayfunaytac.github.io/taytac.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tayfunaytac.github.io/taytac.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#f4ede0;
+    --ivory-2:#ece2cf;
+    --paper:#faf6ec;
+    --paper-2:#f1e9d8;
+    --ink:#1f1a14;
+    --ink-soft:#3a322a;
+    --muted:#6b5e4f;
+    --rule:#cdbfa7;
+    --rule-soft:#e2d6bf;
+    --oxblood:#7a1f25;
+    --oxblood-deep:#5a1419;
+    --gold:#a87a2c;
+    --gold-soft:#c69949;
+    --display:'Cormorant Garamond', 'Times New Roman', serif;
+    --body:'Lora', Georgia, serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
   }
 
-/* === block 3 === */
-  .strategic-list {
-    list-style: none; padding: 0;
-    display: flex; flex-wrap: wrap; gap: 1rem;
-    margin-top: 0.5rem;
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.65;
+    font-weight:400;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(168,122,44,.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 95% 100%, rgba(122,31,37,.05) 0%, transparent 50%);
   }
-  .strategic-list li {
-    background: var(--tag-bg); border: 1px solid var(--accent);
-    border-radius: 8px; padding: 0.6rem 1.2rem;
-    color: var(--text); font-size: 0.95rem; font-weight: 500;
-    position: relative; padding-left: 2rem;
-  }
-  .strategic-list li::before {
-    content: "▸"; color: var(--accent);
-    position: absolute; left: 0.7rem;
-  }
-
-/* === block 4 === */
-  .case-card {
-    background: var(--surface2); border: 1px solid var(--border);
-    border-radius: 14px; padding: 1.8rem;
-  }
-  .case-card .hero-subtitle {
-    font-style: normal;
-    font-size: 0.9rem;
-  }
-  .case-card.primary,
-  .flagship-card.primary {
-    border: 1px solid var(--accent);
-    box-shadow: 0 0 25px rgba(0,194,255,0.15);
-  }
-  .case-header {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;
-  }
-  .case-title { font-size: 1.2rem; font-weight: 800; color: #fff; }
-  .case-sub { font-size: 0.9rem; color: var(--muted); margin-top: 0.3rem; }
-  .case-badge {
-    background: var(--tag-bg); border: 1px solid var(--accent);
-    color: var(--accent); font-weight: 800; padding: 0.4rem 0.9rem;
-    border-radius: 8px; font-size: 0.9rem; white-space: nowrap;
-  }
-  .case-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem;
-  }
-  .case-block {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; padding: 1rem;
-  }
-  .case-label {
-    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
-    color: var(--accent); font-weight: 700; margin-bottom: 0.5rem;
-  }
-  .case-block p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
-  .case-block ul { padding-left: 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
-  .case-block li { font-size: 0.85rem; color: var(--muted); }
-  .flagship-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.2rem; margin-top: 0.5rem;
-  }
-  .flagship-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 12px; padding: 1.2rem 1.4rem;
-    transition: border-color 0.2s; display: flex; flex-direction: column; gap: 0.5rem;
-  }
-  .flagship-card:hover { border-color: var(--accent); }
-  .flagship-type {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
-    color: var(--accent); text-transform: uppercase;
-  }
-  .flagship-title {
-    font-size: 1rem; font-weight: 700; color: var(--text);
-  }
-  .flagship-desc {
-    font-size: 0.85rem; color: var(--muted); line-height: 1.6; flex: 1;
-  }
-  .flagship-tags {
-    display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem;
-  }
-  .flagship-tags span {
-    background: var(--tag-bg); border: 1px solid var(--border);
-    border-radius: 4px; padding: 0.15rem 0.5rem;
-    font-size: 0.75rem; color: var(--muted);
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;
+    z-index:1;
+    opacity:.32;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12  0 0 0 0 0.10  0 0 0 0 0.07  0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
 
-/* === block 5 === */
-  /* Publication tabs */
-  .pub-tabs {
-    display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;
+  ::selection{background:var(--oxblood);color:var(--paper)}
+  a{color:inherit;text-decoration:none}
+  a.org{
+    color:var(--oxblood);
+    border-bottom:1px dotted rgba(122,31,37,.45);
+    transition:border-color .25s, color .25s;
   }
-  .pub-tab {
-    background: var(--surface2); border: 1px solid var(--border);
-    color: var(--muted); font-size: 0.82rem; font-weight: 600;
-    padding: 0.45rem 1.1rem; border-radius: 6px; cursor: pointer;
-    transition: all 0.2s; letter-spacing: 0.03em;
+  a.org:hover{border-bottom-color:var(--oxblood);color:var(--oxblood-deep)}
+
+  /* ---------- TOP BAR ---------- */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;
+    z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 40px;
+    backdrop-filter:blur(10px) saturate(120%);
+    -webkit-backdrop-filter:blur(10px) saturate(120%);
+    background:rgba(244,237,224,.82);
+    border-bottom:1px solid var(--rule-soft);
+    transition:padding .3s ease;
   }
-  .pub-tab:hover { border-color: var(--accent); color: var(--accent); }
-  .pub-tab.active { background: var(--tag-bg); border-color: var(--accent); color: var(--accent); }
-  .pub-panel { display: none; }
-  .pub-panel.active { display: block; }
-  .pub-list {
-    list-style: decimal; padding-left: 1.4rem;
-    display: flex; flex-direction: column; gap: 1.1rem;
+  .topbar.scrolled{padding:12px 40px}
+  .brand{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:22px;
+    letter-spacing:.02em;
+    display:flex;align-items:center;gap:12px;
   }
-  .pub-list li {
-    background: var(--surface2); border: 1px solid var(--border);
-    border-radius: 8px; padding: 0.9rem 1.1rem;
-    font-size: 0.86rem; line-height: 1.6;
-    transition: border-color 0.2s;
+  .brand .monogram{
+    width:34px;height:34px;
+    border:1.5px solid var(--ink);
+    display:grid;place-items:center;
+    font-size:13px;font-weight:700;
+    letter-spacing:.05em;
+    transition:all .4s ease;
   }
-  .pub-list li:hover { border-color: var(--accent); }
-  .pub-authors { color: var(--muted); display: block; margin-bottom: 0.2rem; }
-  .pub-authors strong { color: var(--text); }
-  .pub-title-inline { color: var(--text); font-weight: 600; display: block; margin-bottom: 0.2rem; }
-  .pub-venue { color: var(--muted); font-size: 0.82rem; display: block; }
-  .scholar-link, .org-link {
-    color: var(--accent); text-decoration: none;
-    border-bottom: 1px dashed rgba(0,194,255,0.4);
-    transition: border-color 0.2s, color 0.2s;
+  .brand:hover .monogram{background:var(--ink);color:var(--paper)}
+
+  nav.primary{display:flex;align-items:center;gap:26px}
+  nav.primary a{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    color:var(--ink-soft);
+    position:relative;
+    padding:4px 0;
+    transition:color .25s;
   }
-  .scholar-link:hover, .org-link:hover { border-bottom-color: var(--accent); color: #fff; }
-  .pub-subsection {
-    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem;
+  nav.primary a::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;
+    background:var(--oxblood);transform:scaleX(0);transform-origin:left;
+    transition:transform .35s cubic-bezier(.6,.05,.2,1);
+  }
+  nav.primary a:hover{color:var(--ink)}
+  nav.primary a:hover::after{transform:scaleX(1)}
+
+  .lang-toggle{
+    display:flex;
+    border:1px solid var(--ink);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.1em;
+    overflow:hidden;
+  }
+  .lang-toggle button{
+    background:transparent;border:0;cursor:pointer;
+    padding:6px 12px;
+    color:var(--ink);
+    font:inherit;
+    transition:all .25s;
+  }
+  .lang-toggle button.active{background:var(--ink);color:var(--paper)}
+
+  .menu-btn{display:none}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    padding:140px 40px 80px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:60px;
+    align-items:center;
+    z-index:2;
+  }
+  .hero::before{
+    content:"";position:absolute;
+    top:22%;right:-100px;width:420px;height:420px;
+    border:1px solid var(--rule);
+    border-radius:50%;
+    opacity:.5;
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";position:absolute;
+    top:28%;right:-60px;width:300px;height:300px;
+    border:1px solid var(--oxblood);
+    border-radius:50%;
+    opacity:.18;
+    pointer-events:none;
   }
 
-/* === block 6 === */
-  .act-group-label {
-    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--accent);
-    margin: 1.8rem 0 0.7rem; padding-bottom: 0.4rem;
-    border-bottom: 1px solid var(--border);
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:26px;
   }
-  .act-group-label:first-of-type { margin-top: 0; }
-  .activity-list {
-    list-style: none; display: flex; flex-direction: column; gap: 0.9rem;
+  .eyebrow::before{content:"";width:42px;height:1px;background:var(--oxblood)}
+
+  h1.display{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(46px, 7.2vw, 100px);
+    line-height:.95;
+    letter-spacing:-.015em;
+    color:var(--ink);
+    margin-bottom:18px;
   }
-  .activity-item {
-    display: flex; gap: 1rem; align-items: flex-start;
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; padding: 1rem 1.2rem;
-    font-size: 0.88rem; color: var(--text); line-height: 1.6;
-    transition: border-color 0.2s;
+  h1.display em{font-style:italic;font-weight:400;color:var(--oxblood)}
+
+  .hero-title-line{
+    font-family:var(--display);
+    font-size:clamp(18px, 1.6vw, 23px);
+    line-height:1.45;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+    max-width:560px;
   }
-  .activity-item:hover { border-color: var(--accent); }
-  .activity-item strong { color: var(--text); }
-  .activity-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
-  .activity-type {
-    display: inline-block; background: var(--tag-bg);
-    border: 1px solid var(--border); border-radius: 4px;
-    padding: 0.05rem 0.5rem; font-size: 0.72rem; font-weight: 700;
-    color: var(--accent); letter-spacing: 0.06em;
-    text-transform: uppercase; margin-right: 0.5rem;
-    vertical-align: middle;
+  .hero-title-line .role{font-style:italic;color:var(--oxblood)}
+
+  .hero-subtitle{
+    font-family:var(--display);
+    font-size:clamp(17px, 1.4vw, 21px);
+    font-style:italic;
+    color:var(--muted);
+    margin-bottom:34px;
+    max-width:560px;
+    line-height:1.5;
   }
 
-/* === block 7 === */
-  .footer-contact {
-    display: flex; gap: 1.5rem; justify-content: center;
-    margin: 0.8rem 0; flex-wrap: wrap;
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:13px 22px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    transition:all .3s cubic-bezier(.6,.05,.2,1);
+    cursor:pointer;
+    border:1px solid var(--ink);
   }
-  .footer-contact-link {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    color: var(--muted); text-decoration: none; font-size: 0.82rem;
-    transition: color 0.2s;
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--oxblood);border-color:var(--oxblood)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn .arr{transition:transform .3s}
+  .btn:hover .arr{transform:translateX(4px)}
+
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:28px 40px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    padding-top:28px;
+    border-top:1px solid var(--rule-soft);
+    max-width:580px;
   }
-  .footer-contact-link:hover { color: var(--accent); }
+  .hero-meta div span:first-child{display:block;color:var(--muted);font-size:10px;margin-bottom:6px}
 
-/* === Selected Impact section === */
-.impact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-}
-.impact-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.4rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-.impact-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-}
-.impact-num {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 0.8rem;
-}
-.impact-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-.impact-card p {
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.6;
-}
+  /* portrait */
+  .portrait-frame{
+    position:relative;
+    justify-self:center;
+    width:min(100%, 440px);
+    aspect-ratio:1/1.1;
+  }
+  .portrait-frame::before{
+    content:"";position:absolute;
+    top:18px;left:18px;right:-18px;bottom:-18px;
+    border:1px solid var(--oxblood);
+    z-index:0;
+  }
+  .portrait-frame::after{
+    content:"";position:absolute;
+    top:-12px;left:-12px;right:24px;bottom:24px;
+    border:1px solid var(--gold);
+    opacity:.6;
+    z-index:0;
+  }
+  .portrait{
+    position:relative;
+    z-index:1;
+    width:100%;height:100%;
+    object-fit:cover;
+    object-position:center top;
+    filter:sepia(.08) contrast(1.02);
+    box-shadow:0 30px 60px -25px rgba(31,26,20,.4);
+  }
+  .portrait-caption{
+    position:absolute;
+    bottom:-40px;right:-18px;
+    z-index:2;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:10px 16px;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
 
+  /* ---------- SECTION CHROME ---------- */
+  section.chapter{
+    position:relative;
+    z-index:2;
+    padding:120px 40px;
+    border-top:1px solid var(--rule-soft);
+  }
+  section.chapter.alt{background:var(--paper)}
+  .chapter-head{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:60px;
+    align-items:end;
+    margin-bottom:70px;
+  }
+  .chapter-num{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:.3em;
+    color:var(--oxblood);
+  }
+  .chapter-title{
+    font-family:var(--display);
+    font-size:clamp(38px, 5.2vw, 68px);
+    font-weight:500;
+    line-height:1;
+    letter-spacing:-.01em;
+  }
+  .chapter-title em{font-style:italic;color:var(--oxblood)}
+  .chapter-kicker{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:14px;
+  }
+
+  .container{max-width:1200px;margin:0 auto}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:80px;
+    align-items:start;
+  }
+  .about-text p{
+    font-size:18px;
+    line-height:1.8;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+  }
+  .about-text > p:first-child:first-letter{
+    font-family:var(--display);
+    font-size:64px;
+    float:left;
+    line-height:.85;
+    padding:6px 12px 0 0;
+    color:var(--oxblood);
+    font-weight:500;
+  }
+  .pull-quote{
+    border-left:2px solid var(--oxblood);
+    padding:8px 0 8px 28px;
+    font-family:var(--display);
+    font-size:24px;
+    font-style:italic;
+    line-height:1.45;
+    color:var(--ink);
+    margin:30px 0;
+  }
+  .pull-quote::before{content:"“";color:var(--oxblood);margin-right:.05em}
+  .pull-quote::after{content:"”";color:var(--oxblood)}
+
+  .competencies h4{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:22px;
+  }
+  .comp-list{list-style:none;display:flex;flex-direction:column;gap:0}
+  .comp-list li{
+    font-family:var(--display);
+    font-size:24px;
+    font-weight:500;
+    color:var(--ink);
+    padding:16px 0;
+    border-bottom:1px solid var(--rule-soft);
+    display:flex;align-items:baseline;gap:14px;
+  }
+  .comp-list li::before{
+    content:counter(c, decimal-leading-zero);
+    counter-increment:c;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.18em;
+    color:var(--oxblood);
+    min-width:36px;
+  }
+  .comp-list{counter-reset:c}
+
+  /* ---------- IMPACT ---------- */
+  .impact-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--rule-soft);
+    border:1px solid var(--rule-soft);
+  }
+  .impact-card{
+    background:var(--ivory);
+    padding:42px 32px;
+    transition:background .35s;
+  }
+  section.chapter.alt .impact-card{background:var(--paper)}
+  .impact-card:hover{background:var(--paper-2)}
+  .impact-num{
+    font-family:var(--display);
+    font-size:64px;
+    font-weight:500;
+    line-height:1;
+    color:var(--oxblood);
+    margin-bottom:14px;
+  }
+  .impact-num em{font-style:italic;color:var(--gold)}
+  .impact-title{
+    font-family:var(--display);
+    font-size:22px;
+    font-weight:600;
+    line-height:1.2;
+    margin-bottom:12px;
+  }
+  .impact-card p{font-size:15px;color:var(--ink-soft);line-height:1.65}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline-item{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:50px;
+    padding:42px 0;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .timeline-item:last-child{border-bottom:0}
+  .timeline-period{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.18em;
+    color:var(--oxblood);
+    padding-top:6px;
+    border-top:1px solid var(--oxblood);
+    align-self:start;
+  }
+  .timeline-period.past{color:var(--muted);border-top-color:var(--rule)}
+  .timeline-org{
+    font-family:var(--display);
+    font-size:26px;
+    font-weight:600;
+    line-height:1.25;
+    margin-bottom:6px;
+  }
+  .timeline-org-meta{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:24px;
+  }
+  .sub-role{
+    padding:18px 0;
+    border-top:1px dashed var(--rule);
+  }
+  .sub-role:first-of-type{border-top:0;padding-top:0}
+  .sub-role-header{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    margin-bottom:10px;
+  }
+  .sub-role-title{
+    font-family:var(--display);
+    font-size:21px;
+    font-weight:500;
+    font-style:italic;
+    color:var(--ink);
+  }
+  .sub-role-period{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.15em;
+    color:var(--oxblood);
+    align-self:center;
+  }
+  .exp-bullets{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .exp-bullets li{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    line-height:1.65;
+    padding-left:22px;
+    position:relative;
+  }
+  .exp-bullets li::before{
+    content:"›";position:absolute;left:0;top:-2px;
+    color:var(--oxblood);font-weight:600;font-size:18px;
+  }
+
+  /* ---------- FOCUS AREAS ---------- */
+  .focus-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    counter-reset:f;
+  }
+  .focus-item{
+    position:relative;
+    padding:36px 30px 32px;
+    background:var(--ivory);
+    border:1px solid var(--rule-soft);
+    transition:all .4s;
+  }
+  section.chapter.alt .focus-item{background:var(--paper)}
+  .focus-item::before{
+    content:counter(f, decimal-leading-zero);
+    counter-increment:f;
+    font-family:var(--display);
+    font-style:italic;
+    font-size:64px;
+    color:var(--oxblood);
+    opacity:.18;
+    position:absolute;top:14px;right:24px;line-height:1;
+  }
+  .focus-item:hover{border-color:var(--oxblood);transform:translateY(-3px)}
+  .focus-item p{
+    font-family:var(--display);
+    font-size:22px;
+    line-height:1.4;
+    color:var(--ink);
+    position:relative;
+    z-index:1;
+  }
+
+  /* ---------- FLAGSHIP CARDS ---------- */
+  .flagship-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:26px;
+  }
+  .flag-card{
+    position:relative;
+    background:var(--paper);
+    border:1px solid var(--rule-soft);
+    padding:34px 32px;
+    transition:all .4s cubic-bezier(.6,.05,.2,1);
+    overflow:hidden;
+  }
+  .flag-card::before{
+    content:"";position:absolute;top:0;left:0;width:0;height:2px;
+    background:var(--oxblood);transition:width .5s;
+  }
+  .flag-card:hover{transform:translateY(-3px);box-shadow:0 22px 46px -28px rgba(31,26,20,.35);border-color:var(--rule)}
+  .flag-card:hover::before{width:100%}
+  .flag-type{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    padding-bottom:6px;border-bottom:1px solid var(--oxblood);
+    margin-bottom:20px;
+  }
+  .flag-title{
+    font-family:var(--display);
+    font-size:26px;
+    font-weight:600;
+    line-height:1.2;
+    margin-bottom:14px;
+  }
+  .flag-desc{color:var(--ink-soft);font-size:15.5px;margin-bottom:22px}
+  .flag-tags{
+    display:flex;flex-wrap:wrap;gap:8px;
+    padding-top:18px;border-top:1px dashed var(--rule);
+  }
+  .flag-tags span{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--muted);
+    padding:4px 10px;
+    border:1px solid var(--rule);
+    border-radius:2px;
+  }
+
+  /* ---------- PUBLICATIONS ---------- */
+  .pub-summary{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:50px;
+    padding-bottom:24px;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .pub-summary strong{color:var(--oxblood);font-family:var(--display);font-style:italic;text-transform:none;letter-spacing:0;font-size:18px}
+
+  .pub-list{list-style:none;display:flex;flex-direction:column;gap:0}
+  .pub-item{
+    display:grid;
+    grid-template-columns:60px 1fr;
+    gap:30px;
+    padding:30px 4px;
+    border-bottom:1px solid var(--rule-soft);
+    transition:padding .35s;
+  }
+  .pub-item:hover{padding-left:14px}
+  .pub-num{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.15em;
+    color:var(--oxblood);
+    padding-top:6px;
+  }
+  .pub-authors{
+    color:var(--muted);
+    font-size:14px;
+    display:block;
+    margin-bottom:6px;
+  }
+  .pub-authors strong{color:var(--ink);font-weight:600}
+  .pub-title-inline{
+    font-family:var(--display);
+    font-size:21px;
+    font-weight:500;
+    line-height:1.35;
+    color:var(--ink);
+    display:block;
+    margin-bottom:8px;
+  }
+  .pub-venue{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .pub-venue em{
+    font-family:var(--body);
+    font-style:italic;
+    text-transform:none;
+    letter-spacing:0;
+    color:var(--ink-soft);
+    font-size:13px;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-grid{display:flex;flex-direction:column;gap:0}
+  .edu-row{
+    display:grid;
+    grid-template-columns:140px 1fr 120px;
+    gap:40px;
+    padding:32px 0;
+    border-bottom:1px solid var(--rule-soft);
+    align-items:start;
+  }
+  .edu-row:last-child{border-bottom:0}
+  .edu-degree{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    padding-top:6px;
+    border-top:1px solid var(--oxblood);
+  }
+  .edu-school{
+    font-family:var(--display);
+    font-size:24px;
+    font-weight:600;
+    line-height:1.25;
+    margin-bottom:8px;
+  }
+  .edu-detail{color:var(--ink-soft);font-size:15px;line-height:1.65}
+  .edu-detail em{font-family:var(--display);font-size:18px;font-style:italic;color:var(--ink)}
+  .edu-period{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--muted);
+    text-align:right;
+    padding-top:8px;
+  }
+
+  /* ---------- VISIBILITY ---------- */
+  .vis-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+  }
+  .vis-card{
+    padding:36px 30px;
+    background:var(--paper);
+    border:1px solid var(--rule-soft);
+    transition:all .4s;
+    display:flex;flex-direction:column;
+  }
+  .vis-card:hover{border-color:var(--oxblood);transform:translateY(-3px)}
+  .vis-type{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    margin-bottom:18px;
+  }
+  .vis-title{
+    font-family:var(--display);
+    font-size:23px;
+    font-weight:600;
+    line-height:1.25;
+    margin-bottom:12px;
+  }
+  .vis-desc{color:var(--ink-soft);font-size:15px;flex:1}
+
+  /* ---------- ACTIVITIES ---------- */
+  .act-group{margin-bottom:50px}
+  .act-group:last-child{margin-bottom:0}
+  .act-group-title{
+    font-family:var(--display);
+    font-size:30px;
+    font-weight:500;
+    font-style:italic;
+    color:var(--ink);
+    padding-bottom:14px;
+    border-bottom:1px solid var(--oxblood);
+    margin-bottom:24px;
+    display:flex;align-items:baseline;gap:14px;
+  }
+  .act-group-title::before{
+    content:attr(data-num);
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.25em;
+    color:var(--oxblood);
+    font-style:normal;
+  }
+  .act-list{list-style:none;display:flex;flex-direction:column;gap:0}
+  .act-item{
+    padding:22px 0;
+    border-bottom:1px solid var(--rule-soft);
+    color:var(--ink-soft);
+    font-size:15.5px;
+    line-height:1.7;
+  }
+  .act-item:last-child{border-bottom:0}
+  .act-type{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    margin-right:10px;
+    padding:2px 8px;
+    border:1px solid var(--oxblood);
+  }
+  .act-item strong{color:var(--ink);font-weight:600}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact-section{
+    background:var(--ink);
+    color:var(--ivory);
+    border-top:0;
+    padding:140px 40px 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-section::before{
+    content:"";position:absolute;
+    top:-200px;right:-200px;width:600px;height:600px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(168,122,44,.18), transparent 70%);
+    pointer-events:none;
+  }
+  .contact-section .chapter-num{color:var(--gold-soft)}
+  .contact-section .chapter-title{color:var(--ivory)}
+  .contact-section .chapter-title em{color:var(--gold-soft)}
+  .contact-section .chapter-kicker{color:rgba(244,237,224,.55)}
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:80px;
+    position:relative;z-index:1;
+  }
+  .contact-lede{
+    font-family:var(--display);
+    font-size:clamp(26px,2.8vw,38px);
+    font-style:italic;
+    line-height:1.4;
+    color:var(--ivory);
+    margin-bottom:30px;
+  }
+  .contact-lede em{color:var(--gold-soft);font-style:normal}
+  .contact-affil{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:rgba(244,237,224,.55);
+    line-height:2;
+  }
+  .contact-affil a{
+    color:var(--gold-soft);
+    border-bottom:1px dotted rgba(168,122,44,.4);
+    transition:border-color .25s;
+  }
+  .contact-affil a:hover{border-bottom-color:var(--gold-soft)}
+
+  .contact-links{display:flex;flex-direction:column}
+  .contact-link{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:24px;
+    padding:24px 0;
+    align-items:center;
+    border-bottom:1px solid rgba(244,237,224,.15);
+    transition:all .3s;
+  }
+  .contact-link:hover{padding-left:14px;border-bottom-color:var(--gold-soft)}
+  .contact-link:hover .cl-arrow{transform:translateX(6px);color:var(--gold-soft)}
+  .cl-label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    width:90px;
+  }
+  .cl-value{
+    font-family:var(--display);
+    font-size:22px;
+    color:var(--ivory);
+  }
+  .cl-arrow{font-size:22px;transition:all .3s;color:rgba(244,237,224,.6)}
+
+  .footer{
+    margin-top:90px;
+    padding-top:30px;
+    border-top:1px solid rgba(244,237,224,.15);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:rgba(244,237,224,.5);
+    position:relative;z-index:1;
+  }
+
+  /* ---------- ANIMATIONS ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal-d1{transition-delay:.1s}
+  .reveal-d2{transition-delay:.2s}
+  .reveal-d3{transition-delay:.3s}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  .hero > *{animation:fadeUp 1s cubic-bezier(.2,.7,.2,1) backwards}
+  .hero .text-col > *:nth-child(1){animation-delay:.1s}
+  .hero .text-col > *:nth-child(2){animation-delay:.22s}
+  .hero .text-col > *:nth-child(3){animation-delay:.34s}
+  .hero .text-col > *:nth-child(4){animation-delay:.46s}
+  .hero .text-col > *:nth-child(5){animation-delay:.58s}
+  .hero .text-col > *:nth-child(6){animation-delay:.7s}
+  .hero .portrait-frame{animation-delay:.3s}
+
+  /* ---------- LANG VISIBILITY ---------- */
+  [data-lang="en"] .tr{display:none}
+  [data-lang="tr"] .en{display:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1000px){
+    .impact-grid{grid-template-columns:repeat(2,1fr)}
+    .focus-list{grid-template-columns:1fr}
+    .vis-grid{grid-template-columns:1fr}
+    .flagship-grid{grid-template-columns:1fr}
+    .about-grid{grid-template-columns:1fr;gap:50px}
+  }
+  @media (max-width:820px){
+    .topbar{padding:14px 20px}
+    .topbar.scrolled{padding:10px 20px}
+    nav.primary{display:none}
+    nav.primary.open{
+      display:flex;flex-direction:column;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);
+      padding:20px;gap:14px;
+      border-bottom:1px solid var(--rule);
+      max-height:80vh;overflow-y:auto;
+    }
+    .menu-btn{
+      display:flex;flex-direction:column;gap:5px;
+      background:transparent;border:0;cursor:pointer;padding:6px;
+    }
+    .menu-btn span{width:22px;height:1.5px;background:var(--ink);transition:.3s}
+    .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .menu-btn.open span:nth-child(2){opacity:0}
+    .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    .hero{
+      grid-template-columns:1fr;
+      padding:120px 20px 60px;
+      gap:50px;
+    }
+    .hero::before,.hero::after{display:none}
+    .portrait-frame{order:-1;width:min(100%,300px)}
+    section.chapter{padding:80px 20px}
+    .chapter-head{grid-template-columns:1fr;gap:18px;margin-bottom:50px}
+    .impact-grid{grid-template-columns:1fr}
+    .timeline-item{grid-template-columns:1fr;gap:14px}
+    .timeline-period{justify-self:start}
+    .pub-item{grid-template-columns:30px 1fr;gap:18px}
+    .edu-row{grid-template-columns:1fr;gap:10px}
+    .edu-period{text-align:left;padding-top:0}
+    .contact-section{padding:80px 20px 50px}
+    .contact-grid{grid-template-columns:1fr;gap:50px}
+    .cl-label{display:none}
+    .contact-link{grid-template-columns:1fr auto}
+    .hero-meta{gap:20px 30px}
+  }
 </style>
-  </head>
+</head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-brand" href="#">Tayfun Aytaç</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links" id="navLinks">
-    <a href="#about" onclick="closeNav()">About</a>
-    <a href="#impact" onclick="closeNav()">Impact</a>
-    <a href="#experience" onclick="closeNav()">Experience</a>
-    <a href="#strategic" onclick="closeNav()">Focus Areas</a>
-    <a href="#flagship" onclick="closeNav()">Programs</a>
-    <a href="#publications" onclick="closeNav()">Selected Publications</a>
-    <a href="#education" onclick="closeNav()">Education</a>
-    <a href="#featured" onclick="closeNav()">Visibility</a>
-    <a href="#activities" onclick="closeNav()">Professional</a>
-  </div>
-</nav>
-<script>
-  const toggle = document.getElementById('navToggle');
-  const links = document.getElementById('navLinks');
-  toggle.addEventListener('click', function() {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  function closeNav() {
-    links.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
-</script>
+<!-- ==================== TOP BAR ==================== -->
+<header class="topbar" id="topbar">
+  <a href="#top" class="brand">
+    <span class="monogram">TA</span>
+    <span>Tayfun Aytaç</span>
+  </a>
 
-<!-- HERO -->
-<header>
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-avatar">
-      <img src="taytac.png" alt="Tayfun Aytaç" />
+  <nav class="primary" id="nav">
+    <a href="#about"><span class="en">About</span><span class="tr">Hakkımda</span></a>
+    <a href="#impact"><span class="en">Impact</span><span class="tr">Etki</span></a>
+    <a href="#experience"><span class="en">Experience</span><span class="tr">Deneyim</span></a>
+    <a href="#focus"><span class="en">Focus</span><span class="tr">Odak</span></a>
+    <a href="#flagship"><span class="en">Programs</span><span class="tr">Programlar</span></a>
+    <a href="#publications"><span class="en">Research</span><span class="tr">Araştırma</span></a>
+    <a href="#education"><span class="en">Education</span><span class="tr">Eğitim</span></a>
+    <a href="#visibility"><span class="en">Speaking</span><span class="tr">Konuşmalar</span></a>
+    <a href="#activities"><span class="en">Service</span><span class="tr">Hizmetler</span></a>
+  </nav>
+
+  <div style="display:flex;align-items:center;gap:14px">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button data-set-lang="en" class="active">EN</button>
+      <button data-set-lang="tr" type="button" disabled hidden aria-hidden="true">TR</button>
     </div>
-
-
-    <!-- Layer 1: Identity -->
-    <div class="hero-layer hero-layer--identity">
-      <h1 class="hero-name">Tayfun Aytaç</h1>
-      <p class="hero-title">
-        Director of Advanced Technologies Research Institute (<a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener noreferrer" class="org-link">İLTAREN</a>),
-        <a href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener noreferrer" class="org-link">TÜBİTAK</a> ·
-        <a href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener noreferrer" class="org-link">BİLGEM</a>
-      </p>
-    </div>
-
-    <!-- Layer 2: Authority -->
-    <div class="hero-layer hero-layer--authority">
-      <p class="hero-subtitle">Leading national-scale R&amp;D programs in electronic warfare, self-protection, EO/IR technologies, and AI-enabled sensing</p>
-    </div>
-
-    <!-- Layer 3: Access -->
-    <div class="hero-layer hero-layer--access">
-      <div class="hero-ctas">
-        <a class="hero-cta primary" href="https://www.linkedin.com/in/tayfunaytac/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
-        <a class="hero-cta secondary" href="https://scholar.google.com/citations?user=d68PAlAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">View Publications</a>
-      </div>
-    </div>
-
-    <div class="hero-tags">
-    </div>
-
-
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">20+</div>
-        <div class="stat-lbl">Years in Defense R&amp;D</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">300+</div>
-        <div class="stat-lbl">Staff Led</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">50+</div>
-        <div class="stat-lbl">Publications</div>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-hint">
-    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path d="M12 5v14M5 12l7 7 7-7"/>
-    </svg>
-    Scroll
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="top">
+  <div class="text-col">
+    <div class="eyebrow">
+      <span class="en">Defense R&amp;D · Electronic Warfare</span>
+      <span class="tr">Savunma Ar-Ge · Elektronik Harp</span>
+    </div>
+
+    <h1 class="display">Tayfun <em>Aytaç</em></h1>
+
+    <p class="hero-title-line">
+      <span class="en"><span class="role">Director</span>, Advanced Technologies Research Institute (<a class="org" href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener">İLTAREN</a>) · <a class="org" href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener">TÜBİTAK</a> <a class="org" href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener">BİLGEM</a></span>
+      <span class="tr"><span class="role">Enstitü Müdürü</span>, İleri Teknolojiler Araştırma Enstitüsü (<a class="org" href="https://bilgem.tubitak.gov.tr/iltaren/" target="_blank" rel="noopener">İLTAREN</a>) · <a class="org" href="https://www.tubitak.gov.tr/" target="_blank" rel="noopener">TÜBİTAK</a> <a class="org" href="https://bilgem.tubitak.gov.tr/" target="_blank" rel="noopener">BİLGEM</a></span>
+    </p>
+
+    <p class="hero-subtitle">
+      <span class="en">Leading national-scale R&amp;D programs in electronic warfare, self-protection, EO/IR technologies, and AI-enabled sensing.</span>
+      <span class="tr">Elektronik harp, kendini koruma, EO/IR teknolojileri ve yapay zekâ destekli algılama alanlarında ulusal ölçekli Ar-Ge programlarına liderlik.</span>
+    </p>
+
+    <div class="hero-ctas">
+      <a class="btn primary" href="https://www.linkedin.com/in/tayfunaytac/" target="_blank" rel="noopener">
+        <span class="en">Connect on LinkedIn</span>
+        <span class="tr">LinkedIn'de Bağlan</span>
+        <span class="arr">→</span>
+      </a>
+      <a class="btn ghost" href="https://scholar.google.com/citations?user=d68PAlAAAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="en">View Publications</span>
+        <span class="tr">Yayınları Gör</span>
+        <span class="arr">→</span>
+      </a>
+    </div>
+
+    <div class="hero-meta">
+      <div>
+        <span class="en">Years</span><span class="tr">Tecrübe</span>
+        <span class="en">20+ in Defense R&amp;D</span>
+        <span class="tr">20+ Savunma Ar-Ge</span>
+      </div>
+      <div>
+        <span class="en">Team</span><span class="tr">Ekip</span>
+        <span class="en">300+ Staff Led</span>
+        <span class="tr">300+ Personel</span>
+      </div>
+      <div>
+        <span class="en">Research</span><span class="tr">Araştırma</span>
+        <span class="en">50+ Publications</span>
+        <span class="tr">50+ Yayın</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="portrait-frame">
+    <img class="portrait" src="taytac.png" alt="Tayfun Aytaç">
+    <div class="portrait-caption">Ankara · TR</div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section class="chapter" id="about">
   <div class="container">
-    <div class="section-label">Profile</div>
-    <h2 class="section-title">About</h2>
-    <div class="section-divider"></div>
+    <div class="chapter-head reveal">
+      <div>
+        <div class="chapter-kicker"><span class="en">Profile</span><span class="tr">Profil</span></div>
+        <div class="chapter-num">— 01</div>
+      </div>
+      <h2 class="chapter-title">
+        <span class="en"><em>About</em></span>
+        <span class="tr"><em>Hakkımda</em></span>
+      </h2>
+    </div>
+
     <div class="about-grid">
-      <div class="about-text">
-        <p>
-          Tayfun Aytaç is a defense R&amp;D executive specializing in electronic warfare,
-          AI-enabled sensing, and mission-critical systems. He leads advanced technology
-          programs at TÜBİTAK BİLGEM İLTAREN, with 20+ years of experience spanning national
-          EW systems, multidisciplinary R&amp;D organizations, academic research, and
-          strategic technology leadership.
+      <div class="about-text reveal">
+        <p class="en">
+          Tayfun Aytaç is a defense R&amp;D executive specializing in electronic warfare, AI-enabled sensing, and mission-critical systems. He leads TÜBİTAK BİLGEM İLTAREN, with 20+ years of experience spanning national EW systems, multidisciplinary R&amp;D organizations, academic research, and strategic technology leadership.
+        </p>
+        <p class="tr">
+          Tayfun Aytaç; elektronik harp, yapay zekâ destekli algılama ve görev kritik sistemler alanlarında uzmanlaşmış bir savunma Ar-Ge yöneticisidir. TÜBİTAK BİLGEM İLTAREN bünyesinde ileri teknoloji programlarına liderlik etmektedir. 20 yılı aşkın deneyimi; ulusal EH sistemleri, çok disiplinli Ar-Ge organizasyonları, akademik araştırma ve stratejik teknoloji liderliğini kapsamaktadır.
         </p>
       </div>
-      <div class="about-skills">
-        <h4>Core Competencies</h4>
-        <div class="competency-chips">
-          <span class="comp-chip">Electronic Warfare</span>
-          <span class="comp-chip">Self-Protection Systems</span>
-          <span class="comp-chip">Systems Engineering</span>
-          <span class="comp-chip">Strategic Program Leadership</span>
-          <span class="comp-chip">R&amp;D Strategy &amp; Portfolio</span>
+
+      <div class="competencies reveal reveal-d1">
+        <h4><span class="en">Core Competencies</span><span class="tr">Temel Yetkinlikler</span></h4>
+        <ul class="comp-list">
+          <li><span class="en">Electronic Warfare</span><span class="tr">Elektronik Harp</span></li>
+          <li><span class="en">Self-Protection Systems</span><span class="tr">Kendini Koruma Sistemleri</span></li>
+          <li><span class="en">Systems Engineering</span><span class="tr">Sistem Mühendisliği</span></li>
+          <li><span class="en">Strategic Program Leadership</span><span class="tr">Stratejik Program Liderliği</span></li>
+          <li><span class="en">R&amp;D Strategy &amp; Portfolio</span><span class="tr">Ar-Ge Stratejisi &amp; Portföy</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== IMPACT ==================== -->
+<section class="chapter alt" id="impact">
+  <div class="container">
+    <div class="chapter-head reveal">
+      <div>
+        <div class="chapter-kicker"><span class="en">Executive Impact</span><span class="tr">Yönetimsel Etki</span></div>
+        <div class="chapter-num">— 02</div>
+      </div>
+      <h2 class="chapter-title">
+        <span class="en">Selected <em>impact</em></span>
+        <span class="tr">Seçili <em>etki</em></span>
+      </h2>
+    </div>
+
+    <div class="impact-grid reveal">
+      <div class="impact-card">
+        <div class="impact-num">300<em>+</em></div>
+        <div class="impact-title">
+          <span class="en">Multidisciplinary Staff Led</span>
+          <span class="tr">Çok Disiplinli Personel</span>
         </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SELECTED IMPACT -->
-<section id="impact" style="background: var(--bg);">
-  <div class="container">
-    <div class="section-label">Executive Impact</div>
-    <h2 class="section-title">Selected Impact</h2>
-    <div class="section-divider"></div>
-    <div class="impact-grid">
-      <div class="impact-card">
-        <div class="impact-num">300+</div>
-        <div class="impact-title">Multidisciplinary Staff Led</div>
         <p>
-          Leads a large-scale defense R&amp;D organization delivering sovereign
-          electronic warfare and advanced technology capabilities.
+          <span class="en">Leads a large-scale defense R&amp;D organization delivering sovereign electronic warfare and advanced technology capabilities.</span>
+          <span class="tr">Bağımsız elektronik harp ve ileri teknoloji yetenekleri sunan büyük ölçekli bir savunma Ar-Ge organizasyonuna liderlik eder.</span>
         </p>
       </div>
       <div class="impact-card">
-        <div class="impact-num">20+</div>
-        <div class="impact-title">Years in Defense R&amp;D</div>
+        <div class="impact-num">20<em>+</em></div>
+        <div class="impact-title">
+          <span class="en">Years in Defense R&amp;D</span>
+          <span class="tr">Savunma Ar-Ge'sinde Yıl</span>
+        </div>
         <p>
-          Experience across electronic warfare, EO/IR systems, self-protection,
-          simulation, systems engineering, and strategic program leadership.
+          <span class="en">Experience across electronic warfare, EO/IR systems, self-protection, systems engineering, and strategic program leadership.</span>
+          <span class="tr">Elektronik harp, EO/IR sistemleri, kendini koruma, sistem mühendisliği ve stratejik program liderliği alanlarında deneyim.</span>
         </p>
       </div>
       <div class="impact-card">
-        <div class="impact-num">50+</div>
-        <div class="impact-title">Peer-Reviewed Publications</div>
+        <div class="impact-num">50<em>+</em></div>
+        <div class="impact-title">
+          <span class="en">Peer-Reviewed Publications</span>
+          <span class="tr">Hakemli Yayın</span>
+        </div>
         <p>
-          Research track record spanning infrared sensing, target detection,
-          image processing, electro-optical systems, and defense technologies.
+          <span class="en">Research track record spanning infrared sensing, target detection, image processing, electro-optical systems, and defense technologies.</span>
+          <span class="tr">Kızılötesi algılama, hedef tespiti, görüntü işleme, elektro-optik sistemler ve savunma teknolojileri alanlarında araştırma birikimi.</span>
         </p>
       </div>
       <div class="impact-card">
-        <div class="impact-num">National</div>
-        <div class="impact-title">Strategic EW Programs</div>
+        <div class="impact-num"><em>National</em></div>
+        <div class="impact-title">
+          <span class="en">Strategic EW Programs</span>
+          <span class="tr">Stratejik EH Programları</span>
+        </div>
         <p>
-          Contributed to and led national-scale programs in electronic warfare,
-          RF/EO-IR sensing, countermeasures, and mission-critical defense systems.
+          <span class="en">Contributed to and led national-scale programs in electronic warfare, RF/EO-IR sensing, countermeasures, and mission-critical defense systems.</span>
+          <span class="tr">Elektronik harp, RF/EO-IR algılama, karşı tedbirler ve görev kritik savunma sistemlerinde ulusal ölçekli programlara katkı sundu ve liderlik etti.</span>
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
+<!-- ==================== EXPERIENCE ==================== -->
+<section class="chapter" id="experience">
   <div class="container">
-    <div class="section-label">Career</div>
-    <h2 class="section-title">Leadership &amp; Work Experience</h2>
-    <div class="section-divider"></div>
+    <div class="chapter-head reveal">
+      <div>
+        <div class="chapter-kicker"><span class="en">Career</span><span class="tr">Kariyer</span></div>
+        <div class="chapter-num">— 03</div>
+      </div>
+      <h2 class="chapter-title">
+        <span class="en">Leadership &amp; <em>experience</em></span>
+        <span class="tr">Liderlik &amp; <em>deneyim</em></span>
+      </h2>
+    </div>
+
     <div class="timeline">
 
-      <!-- TÜBİTAK BİLGEM – current block -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-org" style="margin-bottom:1rem;">
-            Advanced Technologies Research Institute (<a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener noreferrer" class="org-link">İLTAREN</a>),
-            <a href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener noreferrer" class="org-link">TÜBİTAK</a> ·
-            <a href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener noreferrer" class="org-link">BİLGEM</a>
+      <!-- TÜBİTAK current -->
+      <div class="timeline-item reveal">
+        <div class="timeline-period">2021 — Present</div>
+        <div>
+          <div class="timeline-org">
+            <span class="en">Advanced Technologies Research Institute (İLTAREN)</span>
+            <span class="tr">İleri Teknolojiler Araştırma Enstitüsü (İLTAREN)</span>
+          </div>
+          <div class="timeline-org-meta">
+            <a class="org" href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener">TÜBİTAK</a> · <a class="org" href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener">BİLGEM</a>
           </div>
 
           <div class="sub-role">
             <div class="sub-role-header">
-              <span class="sub-role-title">Director</span>
-              <span class="timeline-period">Apr 2026 – Present</span>
+              <div class="sub-role-title">
+                <span class="en">Director</span>
+                <span class="tr">Enstitü Müdürü</span>
+              </div>
+              <div class="sub-role-period">Apr 2026 — Present</div>
             </div>
             <ul class="exp-bullets">
-              <li>Lead and scale a 300+ multidisciplinary engineering organization delivering sovereign electronic warfare capabilities across domains.</li>
+              <li>
+                <span class="en">Lead and scale a 300+ multidisciplinary engineering organization delivering sovereign electronic warfare capabilities across domains.</span>
+                <span class="tr">Tüm muharebe ortamlarında bağımsız elektronik harp yetenekleri sunan 300+ kişilik çok disiplinli mühendislik organizasyonunu yönetir ve büyütür.</span>
+              </li>
             </ul>
           </div>
 
           <div class="sub-role">
             <div class="sub-role-header">
-              <span class="sub-role-title">Deputy Director</span>
-              <span class="timeline-period">Aug 2021 – Mar 2026</span>
+              <div class="sub-role-title">
+                <span class="en">Deputy Director</span>
+                <span class="tr">Müdür Yardımcısı</span>
+              </div>
+              <div class="sub-role-period">Aug 2021 — Mar 2026</div>
             </div>
             <ul class="exp-bullets">
-              <li>Directed large-scale electronic warfare programs integrating RF and EO/IR capabilities across domains, delivering operational systems under stringent performance and schedule constraints.</li>
+              <li>
+                <span class="en">Directed large-scale electronic warfare programs integrating RF and EO/IR capabilities across domains, delivering operational systems under stringent performance and schedule constraints.</span>
+                <span class="tr">RF ve EO/IR yeteneklerini bütünleşik şekilde harmanlayan büyük ölçekli elektronik harp programlarını yönetti; operasyonel sistemleri zorlu performans ve takvim kısıtları altında teslim etti.</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
       <!-- ASELSAN -->
-      <div class="timeline-item">
-        <div class="timeline-dot past"></div>
-        <div class="timeline-card">
-          <div class="timeline-org" style="margin-bottom:0.8rem;"><a href="https://www.aselsan.com/en" target="_blank" rel="noopener noreferrer" class="org-link">ASELSAN</a> Radar EW Systems – System Engineering Directorate</div>
+      <div class="timeline-item reveal">
+        <div class="timeline-period past">May 2019 — Aug 2021</div>
+        <div>
+          <div class="timeline-org">
+            <span class="en">ASELSAN — Radar EW Systems</span>
+            <span class="tr">ASELSAN — Radar EH Sistemleri</span>
+          </div>
+          <div class="timeline-org-meta">
+            <span class="en">System Engineering Directorate · <a class="org" href="https://www.aselsan.com/en" target="_blank" rel="noopener">aselsan.com</a></span>
+            <span class="tr">Sistem Mühendisliği Müdürlüğü · <a class="org" href="https://www.aselsan.com" target="_blank" rel="noopener">aselsan.com</a></span>
+          </div>
+
           <div class="sub-role">
             <div class="sub-role-header">
-              <span class="sub-role-title">Senior Lead Systems Engineer</span>
-              <span class="timeline-period">May 2019 – Aug 2021</span>
+              <div class="sub-role-title">
+                <span class="en">Senior Lead Systems Engineer</span>
+                <span class="tr">Kıdemli Lider Sistem Mühendisi</span>
+              </div>
             </div>
             <ul class="exp-bullets">
-              <li>Project Control Level Responsible for the self-protection subsystem for the Air Stand Off Jammer (ASOJ) Program.</li>
-              <li>Contributed to the development of ASELSAN's next-gen Smart Counter Measure Dispensing System (KARTACA).</li>
-              <li>Technically led CMDS work packages for ASOJ and the KAAN 5th Generation National Fighter Program.</li>
+              <li>
+                <span class="en">Project Control Level Responsible for the self-protection subsystem for the Air Stand-Off Jammer (ASOJ) Program.</span>
+                <span class="tr">Hava Mesafeli Karıştırıcı (ASOJ) Programı kendini koruma alt sistemi için Proje Kontrol Seviyesi Sorumlusu.</span>
+              </li>
+              <li>
+                <span class="en">Contributed to the development of ASELSAN's next-generation Smart Counter Measure Dispensing System (KARTACA).</span>
+                <span class="tr">ASELSAN'ın yeni nesil Akıllı Karşı Tedbir Atma Sistemi (KARTACA) geliştirme çalışmalarına katkı sundu.</span>
+              </li>
+              <li>
+                <span class="en">Technically led CMDS work packages for ASOJ and the KAAN 5th-generation national fighter program.</span>
+                <span class="tr">ASOJ ve 5. Nesil Milli Muharip Uçak (KAAN) programları için CMDS iş paketlerine teknik liderlik yaptı.</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- TÜBİTAK BİLGEM – previous roles -->
-      <div class="timeline-item">
-        <div class="timeline-dot past"></div>
-        <div class="timeline-card">
-          <div class="timeline-org" style="margin-bottom:1rem;">
-            Advanced Technologies Research Institute (<a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener noreferrer" class="org-link">İLTAREN</a>),
-            <a href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener noreferrer" class="org-link">TÜBİTAK</a> ·
-            <a href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener noreferrer" class="org-link">BİLGEM</a>
+      <!-- TÜBİTAK earlier -->
+      <div class="timeline-item reveal">
+        <div class="timeline-period past">Nov 2006 — Feb 2019</div>
+        <div>
+          <div class="timeline-org">
+            <span class="en">Advanced Technologies Research Institute (İLTAREN)</span>
+            <span class="tr">İleri Teknolojiler Araştırma Enstitüsü (İLTAREN)</span>
+          </div>
+          <div class="timeline-org-meta">
+            <a class="org" href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener">TÜBİTAK</a> · <a class="org" href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener">BİLGEM</a>
           </div>
 
           <div class="sub-role">
             <div class="sub-role-header">
-              <span class="sub-role-title">IR-EO Technologies Department Head / Project Management Process Responsible / Project Manager / Research Scientist</span>
-              <span class="timeline-period">Nov 2006 – Feb 2019</span>
+              <div class="sub-role-title">
+                <span class="en">IR-EO Technologies Department Head · Project Manager · Research Scientist</span>
+                <span class="tr">IR-EO Teknolojileri Birim Yöneticisi · Proje Yöneticisi · Araştırmacı</span>
+              </div>
             </div>
             <ul class="exp-bullets">
-              <li>Contributed to the development of the "Infrared Seeker Effectiveness Test and Analysis System" Project (Phase 2).</li>
-              <li>Led simulation and modeling studies for IR/EO systems and algorithm development.</li>
-              <li>Coordinated project proposals for infrared based missile warning and directed infrared countermeasure systems.</li>
-              <li>Managed the "Infrared Seeker Effectiveness Test and Analysis System" (Phase 1).</li>
-              <li>Participated in NATO EW trials in Germany and France.</li>
-              <li>Coordinated work packages for "IR hardware-in-the-loop" and "IR digital tactical simulator."</li>
+              <li>
+                <span class="en">Contributed to the "Infrared Seeker Effectiveness Test and Analysis System" Project (Phase 2).</span>
+                <span class="tr">"Kızılötesi Arayıcı Etkinlik Test ve Analiz Sistemi" Projesi'nin (2. Faz) geliştirilmesine katkı sundu.</span>
+              </li>
+              <li>
+                <span class="en">Led simulation and modeling studies for IR/EO systems and algorithm development.</span>
+                <span class="tr">IR/EO sistemleri için simülasyon ve modelleme çalışmaları ile algoritma geliştirme süreçlerine liderlik etti.</span>
+              </li>
+              <li>
+                <span class="en">Coordinated project proposals for IR-based missile warning and directed infrared countermeasure (DIRCM) systems.</span>
+                <span class="tr">Kızılötesi tabanlı füze ihbar ve DIRCM sistemlerine yönelik proje önerilerini koordine etti.</span>
+              </li>
+              <li>
+                <span class="en">Managed Phase 1 of the "Infrared Seeker Effectiveness Test and Analysis System" project.</span>
+                <span class="tr">"Kızılötesi Arayıcı Etkinlik Test ve Analiz Sistemi" projesinin 1. Fazını yönetti.</span>
+              </li>
+              <li>
+                <span class="en">Participated in NATO EW trials in Germany and France.</span>
+                <span class="tr">Almanya ve Fransa'da gerçekleştirilen NATO EH tatbikatlarına katıldı.</span>
+              </li>
+              <li>
+                <span class="en">Coordinated work packages for IR hardware-in-the-loop and IR digital tactical simulator efforts.</span>
+                <span class="tr">IR donanımın döngüde olduğu (HIL) ve IR sayısal taktik simülatör çalışmaları için iş paketlerini koordine etti.</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
       <!-- HAVELSAN -->
-      <div class="timeline-item">
-        <div class="timeline-dot past"></div>
-        <div class="timeline-card">
-          <div class="timeline-org" style="margin-bottom:0.8rem;"><a href="https://www.havelsan.com.tr/en" target="_blank" rel="noopener noreferrer" class="org-link">HAVELSAN</a> Inc.</div>
+      <div class="timeline-item reveal">
+        <div class="timeline-period past">Jul 2005 — Sep 2006</div>
+        <div>
+          <div class="timeline-org">
+            <span class="en">HAVELSAN Inc.</span>
+            <span class="tr">HAVELSAN A.Ş.</span>
+          </div>
+          <div class="timeline-org-meta">
+            <a class="org" href="https://www.havelsan.com.tr/en" target="_blank" rel="noopener">havelsan.com.tr</a>
+          </div>
+
           <div class="sub-role">
             <div class="sub-role-header">
-              <span class="sub-role-title">Senior Systems Engineer</span>
-              <span class="timeline-period">Jul 2005 – Sep 2006</span>
+              <div class="sub-role-title">
+                <span class="en">Senior Systems Engineer</span>
+                <span class="tr">Kıdemli Sistem Mühendisi</span>
+              </div>
             </div>
             <ul class="exp-bullets">
-              <li>Developed target detection and tracking algorithms for FLIR system simulation.</li>
-              <li>Simulated inertial navigation systems and performed data fusion of multiple navigation sensors.</li>
+              <li>
+                <span class="en">Developed target detection and tracking algorithms for FLIR system simulation.</span>
+                <span class="tr">FLIR sistem simülasyonu için hedef tespit ve takip algoritmaları geliştirdi.</span>
+              </li>
+              <li>
+                <span class="en">Simulated inertial navigation systems and performed data fusion of multiple navigation sensors.</span>
+                <span class="tr">Ataletsel navigasyon sistemlerini simüle etti; çoklu navigasyon algılayıcılarına yönelik veri tümleştirmesi gerçekleştirdi.</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- Bilkent RA -->
-      <div class="timeline-item">
-        <div class="timeline-dot past"></div>
-        <div class="timeline-card">
-          <div class="timeline-org" style="margin-bottom:0.8rem;"><a href="https://w3.bilkent.edu.tr/bilkent/" target="_blank" rel="noopener noreferrer" class="org-link">Bilkent University</a> · <a href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener noreferrer" class="org-link">Dept. of Electrical &amp; Electronics Engineering</a></div>
+      <!-- Bilkent -->
+      <div class="timeline-item reveal">
+        <div class="timeline-period past">Sep 2000 — Jun 2005</div>
+        <div>
+          <div class="timeline-org">
+            <span class="en">Bilkent University</span>
+            <span class="tr">Bilkent Üniversitesi</span>
+          </div>
+          <div class="timeline-org-meta">
+            <a class="org" href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener">
+              <span class="en">Dept. of Electrical &amp; Electronics Engineering</span>
+              <span class="tr">Elektrik &amp; Elektronik Mühendisliği Bölümü</span>
+            </a>
+          </div>
+
           <div class="sub-role">
             <div class="sub-role-header">
-              <span class="sub-role-title">Research Assistant</span>
-              <span class="timeline-period">Sep 2000 – Jun 2005</span>
+              <div class="sub-role-title">
+                <span class="en">Research Assistant</span>
+                <span class="tr">Araştırma Görevlisi</span>
+              </div>
             </div>
             <ul class="exp-bullets">
-              <li>Developed innovative target classification and localization methods using infrared (IR) sensors for indoor mobile robotics applications.</li>
-              <li>Conducted physics-based modeling of IR intensity signals.</li>
-              <li>Worked with laser scanners and contributed to error modeling of fiber optic gyros.</li>
-              <li>Assisted in courses on Circuit Theory, Robotics and Sensing, Introduction to Probability, Electrical Engineering, Random Processes, and Digital Electronics.</li>
+              <li>
+                <span class="en">Developed innovative target classification and localization methods using infrared sensors for indoor mobile robotics applications.</span>
+                <span class="tr">İç mekân mobil robot uygulamaları için kızılötesi algılayıcılar kullanan yenilikçi hedef sınıflandırma ve konumlama yöntemleri geliştirdi.</span>
+              </li>
+              <li>
+                <span class="en">Conducted physics-based modeling of IR intensity signals.</span>
+                <span class="tr">IR şiddet sinyalleri üzerinde fizik temelli modelleme çalışmaları yürüttü.</span>
+              </li>
+              <li>
+                <span class="en">Worked with laser scanners and contributed to error modeling of fiber optic gyros.</span>
+                <span class="tr">Lazer tarayıcılarla çalıştı ve fiber optik jiroskopların hata modellemesine katkı sundu.</span>
+              </li>
+              <li>
+                <span class="en">Assisted in courses on Circuit Theory, Robotics &amp; Sensing, Probability, Random Processes, and Digital Electronics.</span>
+                <span class="tr">Devre Teorisi, Robotik &amp; Algılama, Olasılık, Rastgele Süreçler ve Sayısal Elektronik derslerinde asistanlık yaptı.</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -967,482 +1336,678 @@
   </div>
 </section>
 
-<!-- STRATEGIC DIRECTION -->
-<section id="strategic" style="background: var(--surface);">
+<!-- ==================== FOCUS AREAS ==================== -->
+<section class="chapter alt" id="focus">
   <div class="container">
-    <div class="section-label">Focus Areas</div>
-    <h2 class="section-title">Focus Areas</h2>
-    <div class="section-divider"></div>
-    <ul class="strategic-list">
-      <li>Operationalizing cognitive electronic warfare architectures for real-time adaptive threat response</li>
-      <li>Multi-domain sensing and cross-platform data fusion (RF + EO/IR)</li>
-      <li>Scalable self-protection systems for next-generation air and naval platforms</li>
-    </ul>
+    <div class="chapter-head reveal">
+      <div>
+        <div class="chapter-kicker"><span class="en">Focus Areas</span><span class="tr">Odak Alanları</span></div>
+        <div class="chapter-num">— 04</div>
+      </div>
+      <h2 class="chapter-title">
+        <span class="en">Where the <em>work</em> is</span>
+        <span class="tr">İşin <em>yöneldiği</em> yer</span>
+      </h2>
+    </div>
 
+    <div class="focus-list">
+      <div class="focus-item reveal">
+        <p>
+          <span class="en">Operationalizing cognitive electronic warfare architectures for real-time adaptive threat response.</span>
+          <span class="tr">Gerçek zamanlı uyarlanabilir tehdit yanıtı için bilişsel elektronik harp mimarilerini operasyonel hale getirmek.</span>
+        </p>
+      </div>
+      <div class="focus-item reveal reveal-d1">
+        <p>
+          <span class="en">Multi-domain sensing and cross-platform data fusion across RF and EO/IR.</span>
+          <span class="tr">RF ve EO/IR boyunca çok ortamlı algılama ve platformlar arası veri tümleştirme.</span>
+        </p>
+      </div>
+      <div class="focus-item reveal reveal-d2">
+        <p>
+          <span class="en">Scalable self-protection systems for next-generation air and naval platforms.</span>
+          <span class="tr">Yeni nesil hava ve deniz platformları için ölçeklenebilir kendini koruma sistemleri.</span>
+        </p>
+      </div>
+    </div>
   </div>
 </section>
-<!-- FLAGSHIP SYSTEMS -->
-<section id="flagship" style="background: var(--bg);">
+
+<!-- ==================== FLAGSHIP PROGRAMS ==================== -->
+<section class="chapter" id="flagship">
   <div class="container">
-    <div class="section-label">Strategic Programs</div>
-    <h2 class="section-title">Flagship Programs &amp; Systems</h2>
-    <div class="section-divider"></div>
+    <div class="chapter-head reveal">
+      <div>
+        <div class="chapter-kicker"><span class="en">Strategic Programs</span><span class="tr">Stratejik Programlar</span></div>
+        <div class="chapter-num">— 05</div>
+      </div>
+      <h2 class="chapter-title">
+        <span class="en">Flagship <em>programs</em></span>
+        <span class="tr">Öne çıkan <em>programlar</em></span>
+      </h2>
+    </div>
 
     <div class="flagship-grid">
+      <article class="flag-card reveal">
+        <div class="flag-type"><span class="en">Airborne EW Pod Systems</span><span class="tr">Havadan EH Pod Sistemleri</span></div>
+        <h3 class="flag-title">
+          <span class="en">Airborne Electronic Warfare Pod Systems</span>
+          <span class="tr">Havadan Elektronik Harp Pod Sistemleri</span>
+        </h3>
+        <p class="flag-desc">
+          <span class="en">Development of ESM and EW pods for fighter and UAV platforms and self-protection pods for UAV systems — enabling modular, scalable EW capability across manned and unmanned systems.</span>
+          <span class="tr">Savaş uçağı ve İHA platformları için ESM/EH podları ile İHA sistemleri için kendini koruma podlarının geliştirilmesi — insanlı ve insansız sistemlerde modüler ve ölçeklenebilir EH yeteneği.</span>
+        </p>
+        <div class="flag-tags">
+          <span class="en">EW Pods</span><span class="tr">EH Podları</span>
+          <span class="en">Fighter Platforms</span><span class="tr">Savaş Uçağı</span>
+          <span class="en">UAV Self-Protection</span><span class="tr">İHA Kendini Koruma</span>
+        </div>
+      </article>
 
-      <!-- System 2 -->
-      <div class="flagship-card">
-        <div class="flagship-type">Airborne EW Pod Systems</div>
-        <div class="flagship-title">Airborne Electronic Warfare Pod Systems</div>
-        <div class="flagship-desc">
-          Development of ESM and EW pods for fighter and UAV platforms and
-          self-protection pods for UAV systems, enabling modular and scalable EW
-          capability across manned and unmanned systems.
-        </div>
-        <div class="flagship-tags">
-          <span>EW Pods</span>
-          <span>Fighter Platforms</span>
-          <span>UAV Self-Protection</span>
-        </div>
-      </div>
-
-      <!-- System 3 -->
-      <div class="flagship-card">
-        <div class="flagship-type">Intelligence &amp; Surveillance</div>
-        <div class="flagship-title">ESM / ELINT Systems</div>
-        <div class="flagship-desc">
-          Development of Electronic Support Measures (ESM) and Electronic
-          Intelligence (ELINT) systems for signal interception, analysis, and
-          threat library management.
-        </div>
-        <div class="flagship-tags">
+      <article class="flag-card reveal reveal-d1">
+        <div class="flag-type"><span class="en">Intelligence &amp; Surveillance</span><span class="tr">İstihbarat &amp; Gözetim</span></div>
+        <h3 class="flag-title">
+          <span class="en">ESM / ELINT Systems</span>
+          <span class="tr">ESM / ELINT Sistemleri</span>
+        </h3>
+        <p class="flag-desc">
+          <span class="en">Development of Electronic Support Measures (ESM) and Electronic Intelligence (ELINT) systems for signal interception, analysis, and threat library management.</span>
+          <span class="tr">Sinyal yakalama, analiz ve tehdit kütüphanesi yönetimi için Elektronik Destek (ESM) ve Elektronik İstihbarat (ELINT) sistemlerinin geliştirilmesi.</span>
+        </p>
+        <div class="flag-tags">
           <span>ESM</span>
           <span>ELINT</span>
-          <span>Signal Intelligence</span>
+          <span class="en">Signal Intelligence</span><span class="tr">Sinyal İstihbaratı</span>
         </div>
-      </div>
+      </article>
 
-      <!-- System 4 -->
-      <div class="flagship-card">
-        <div class="flagship-type">IR / EO Systems</div>
-        <div class="flagship-title">MWS / DIRCM Systems</div>
-        <div class="flagship-desc">
-          Research and development of Missile Warning Systems (MWS) and Directed
-          Infrared Countermeasure (DIRCM) technologies for platform protection
-          against IR-guided threats.
-        </div>
-        <div class="flagship-tags">
-          <span>Missile Warning</span>
+      <article class="flag-card reveal reveal-d2">
+        <div class="flag-type"><span class="en">IR / EO Systems</span><span class="tr">IR / EO Sistemleri</span></div>
+        <h3 class="flag-title">
+          <span class="en">MWS / DIRCM Systems</span>
+          <span class="tr">MWS / DIRCM Sistemleri</span>
+        </h3>
+        <p class="flag-desc">
+          <span class="en">Research and development of Missile Warning Systems (MWS) and Directed Infrared Countermeasure (DIRCM) technologies for platform protection against IR-guided threats.</span>
+          <span class="tr">Kızılötesi güdümlü tehditlere karşı platform korumasına yönelik Füze İhbar Sistemleri (MWS) ve Yönlendirilmiş Kızılötesi Karşı Tedbir (DIRCM) teknolojilerinin Ar-Ge'si.</span>
+        </p>
+        <div class="flag-tags">
+          <span class="en">Missile Warning</span><span class="tr">Füze İhbar</span>
           <span>DIRCM</span>
-          <span>IR Threat Response</span>
+          <span class="en">IR Threat Response</span><span class="tr">IR Tehdit Yanıtı</span>
         </div>
-      </div>
+      </article>
 
-      <!-- System 5 -->
-      <div class="flagship-card">
-        <div class="flagship-type">Countermeasures</div>
-        <div class="flagship-title">Advanced IR/RF Countermeasures</div>
-        <div class="flagship-desc">
-          Development and integration of advanced infrared and RF countermeasure systems
-          for platform self-protection across the aerial domain.
+      <article class="flag-card reveal">
+        <div class="flag-type"><span class="en">Countermeasures</span><span class="tr">Karşı Tedbirler</span></div>
+        <h3 class="flag-title">
+          <span class="en">Advanced IR/RF Countermeasures</span>
+          <span class="tr">İleri IR/RF Karşı Tedbirler</span>
+        </h3>
+        <p class="flag-desc">
+          <span class="en">Development and integration of advanced infrared and RF countermeasure systems for platform self-protection across the aerial domain.</span>
+          <span class="tr">Hava ortamında platform kendini koruması için ileri kızılötesi ve RF karşı tedbir sistemlerinin geliştirilmesi ve entegrasyonu.</span>
+        </p>
+        <div class="flag-tags">
+          <span class="en">IR Countermeasures</span><span class="tr">IR Karşı Tedbir</span>
+          <span class="en">RF Jamming</span><span class="tr">RF Karıştırma</span>
+          <span class="en">Self-Protection</span><span class="tr">Kendini Koruma</span>
         </div>
-        <div class="flagship-tags">
-          <span>IR Countermeasures</span>
-          <span>RF Jamming</span>
-          <span>Self-Protection</span>
-        </div>
-      </div>
+      </article>
 
-      <!-- System 6 -->
-      <div class="flagship-card">
-        <div class="flagship-type">Simulation &amp; Test Infrastructure</div>
-        <div class="flagship-title">Hardware-in-the-Loop &amp; Digital EW Simulation</div>
-        <div class="flagship-desc">
-          Advanced simulation environments including hardware-in-the-loop (HIL)
-          and digital tactical simulators to validate system performance under
-          realistic threat conditions.
+      <article class="flag-card reveal reveal-d1">
+        <div class="flag-type"><span class="en">Simulation &amp; Test</span><span class="tr">Simülasyon &amp; Test</span></div>
+        <h3 class="flag-title">
+          <span class="en">Hardware-in-the-Loop &amp; Digital EW Simulation</span>
+          <span class="tr">HIL &amp; Sayısal EH Simülasyonu</span>
+        </h3>
+        <p class="flag-desc">
+          <span class="en">Advanced simulation environments — including hardware-in-the-loop (HIL) and digital tactical simulators — to validate system performance under realistic threat conditions.</span>
+          <span class="tr">Donanımın döngüde olduğu (HIL) ve sayısal taktik simülatörler dâhil ileri simülasyon ortamları; gerçekçi tehdit koşullarında sistem performansını doğrular.</span>
+        </p>
+        <div class="flag-tags">
+          <span class="en">HIL Simulation</span><span class="tr">HIL Simülasyonu</span>
+          <span class="en">Validation &amp; Testing</span><span class="tr">Doğrulama &amp; Test</span>
+          <span class="en">System Verification</span><span class="tr">Sistem Doğrulama</span>
         </div>
-        <div class="flagship-tags">
-          <span>HIL Simulation</span>
-          <span>Validation &amp; Testing</span>
-          <span>System Verification</span>
-        </div>
-      </div>
+      </article>
 
-      <!-- System 7 -->
-      <div class="flagship-card">
-        <div class="flagship-type">Engineering Support &amp; Training</div>
-        <div class="flagship-title">EW Engineering Support &amp; Training Centers</div>
-        <div class="flagship-desc">
-          EW support and planning center, EW operational training, EMSO
-          education, and EW database management capabilities for end-users and
-          joint forces.
+      <article class="flag-card reveal reveal-d2">
+        <div class="flag-type"><span class="en">Engineering Support &amp; Training</span><span class="tr">Mühendislik Desteği &amp; Eğitim</span></div>
+        <h3 class="flag-title">
+          <span class="en">EW Engineering Support &amp; Training Centers</span>
+          <span class="tr">EH Mühendislik Desteği &amp; Eğitim Merkezleri</span>
+        </h3>
+        <p class="flag-desc">
+          <span class="en">EW support and planning center, EW operational training, EMSO education, and EW database management capabilities for end-users and joint forces.</span>
+          <span class="tr">Son kullanıcılar ve müşterek kuvvetler için EH destek ve planlama merkezi, EH operasyonel eğitimi, EMSO eğitimi ve EH veritabanı yönetimi yetenekleri.</span>
+        </p>
+        <div class="flag-tags">
+          <span class="en">EMSO Training</span><span class="tr">EMSO Eğitimi</span>
+          <span class="en">EW Database</span><span class="tr">EH Veritabanı</span>
+          <span class="en">Operational Readiness</span><span class="tr">Operasyonel Hazırlık</span>
         </div>
-        <div class="flagship-tags">
-          <span>EMSO Training</span>
-          <span>EW Database</span>
-          <span>Operational Readiness</span>
-        </div>
-      </div>
-
+      </article>
     </div>
   </div>
 </section>
-<!-- PUBLICATIONS -->
-<section id="publications">
-  <div class="container">
-    <div class="section-label">Research</div>
-    <h2 class="section-title">Selected Publications</h2>
-    <div class="section-divider"></div>
-    <p style="color:var(--muted); margin-bottom:2rem; font-size:0.9rem;">
-      50+ peer-reviewed publications · <a href="https://scholar.google.com/citations?user=d68PAlAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="scholar-link">350+ citations · h-index: 13</a> &nbsp;|&nbsp;
-      15 SCI journal articles · 35+ conference papers
-    </p>
 
-    <!-- Tab buttons -->
-    <div class="pub-tabs" id="pubTabs">
-      <button class="pub-tab active" data-tab="journals">Selected Publications</button>
+<!-- ==================== PUBLICATIONS ==================== -->
+<section class="chapter alt" id="publications">
+  <div class="container">
+    <div class="chapter-head reveal">
+      <div>
+        <div class="chapter-kicker"><span class="en">Research</span><span class="tr">Araştırma</span></div>
+        <div class="chapter-num">— 06</div>
+      </div>
+      <h2 class="chapter-title">
+        <span class="en">Selected <em>publications</em></span>
+        <span class="tr">Seçili <em>yayınlar</em></span>
+      </h2>
     </div>
 
-    <!-- Selected Publications -->
-    <div class="pub-panel active" id="tab-journals">
-      <ol class="pub-list">
-        <li>
+    <p class="pub-summary reveal">
+      <span class="en">50+ peer-reviewed publications · <a class="org" href="https://scholar.google.com/citations?user=d68PAlAAAAAJ&hl=en" target="_blank" rel="noopener"><strong>350+ citations · h-index 13</strong></a> · 15 SCI journal articles · 35+ conference papers</span>
+      <span class="tr">50+ hakemli yayın · <a class="org" href="https://scholar.google.com/citations?user=d68PAlAAAAAJ&hl=en" target="_blank" rel="noopener"><strong>350+ atıf · h-indeksi 13</strong></a> · 15 SCI dergi makalesi · 35+ konferans bildirisi</span>
+    </p>
+
+    <ol class="pub-list">
+      <li class="pub-item reveal">
+        <span class="pub-num">001</span>
+        <div>
           <span class="pub-authors">S. O. Işıklı, E. Bor, U. G. Yasa, M. Z. Keskin, A. Başaran, Z. G. Figen, T. Akgün, <strong>T. Aytaç</strong>, B. Bozok, M. Salman, Y. Atalık.</span>
           <span class="pub-title-inline">The influence of optical turbulence on closed-loop DIRCM identification performance.</span>
           <span class="pub-venue"><em>SPIE Security + Defence — High-Power Lasers and Technologies for Optical Countermeasures II</em>, Sep 2024, Edinburgh, Scotland.</span>
-        </li>
-        <li>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">002</span>
+        <div>
           <span class="pub-authors"><strong>T. Aytaç</strong>, C. D. Bozağaç.</span>
-          <span class="pub-title-inline">Electronic Warfare.</span>
-          <span class="pub-venue"><em>TÜBİTAK BİLGEM Electronic Warfare Technologies Special Issue</em> (in Turkish), p. 8-11, 2023.</span>
-        </li>
-        <li>
+          <span class="pub-title-inline">
+            <span class="en">Electronic Warfare.</span>
+            <span class="tr">Elektronik Harp.</span>
+          </span>
+          <span class="pub-venue">
+            <span class="en"><em>TÜBİTAK BİLGEM Electronic Warfare Technologies Special Issue</em> (in Turkish), pp. 8–11, 2023.</span>
+            <span class="tr"><em>TÜBİTAK BİLGEM Elektronik Harp Teknolojileri Özel Sayısı</em>, s. 8–11, 2023.</span>
+          </span>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">003</span>
+        <div>
           <span class="pub-authors">H. Üzeler, S. Çakır, <strong>T. Aytaç</strong>.</span>
-          <span class="pub-title-inline">Image reconstruction for single detector rosette scanning systems based on compressive sensing theory.</span>
-          <span class="pub-venue"><em>Optical Engineering</em>, 55(2), 023108:1-11, 2016.</span>
-        </li>
-        <li>
+          <span class="pub-title-inline">Image reconstruction for single-detector rosette scanning systems based on compressive sensing theory.</span>
+          <span class="pub-venue"><em>Optical Engineering</em>, 55(2), 023108:1–11, 2016.</span>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">004</span>
+        <div>
           <span class="pub-authors">A. O. Karalı, S. Çakır, <strong>T. Aytaç</strong>.</span>
           <span class="pub-title-inline">Multiscale contrast direction adaptive image fusion technique for MWIR-LWIR image pairs and LWIR multi-focus infrared images.</span>
-          <span class="pub-venue"><em>Applied Optics</em>, 54(13):4172-4179, 2015.</span>
-        </li>
-        <li>
+          <span class="pub-venue"><em>Applied Optics</em>, 54(13):4172–4179, 2015.</span>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">005</span>
+        <div>
           <span class="pub-authors">S. Çakır, H. Üzeler, <strong>T. Aytaç</strong>.</span>
           <span class="pub-title-inline">An iterative sampling framework for the sparse recovery of infrared maritime images.</span>
-          <span class="pub-venue"><em>NATO SET Specialist Meeting on Compressive Sensing for Radar/SAR and EO/IR Imaging</em>, 12-13 May 2014, Tallinn, Estonia.</span>
-        </li>
-        <li>
+          <span class="pub-venue"><em>NATO SET Specialist Meeting on Compressive Sensing for Radar/SAR and EO/IR Imaging</em>, May 2014, Tallinn, Estonia.</span>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">006</span>
+        <div>
           <span class="pub-authors">S. Çakır, H. Üzeler, <strong>T. Aytaç</strong>.</span>
           <span class="pub-title-inline">Sampling strategy for the sparse recovery of infrared images.</span>
-          <span class="pub-venue"><em>Applied Optics</em>, 52(28):6858-6867, 2013.</span>
-        </li>
-        <li>
+          <span class="pub-venue"><em>Applied Optics</em>, 52(28):6858–6867, 2013.</span>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">007</span>
+        <div>
           <span class="pub-authors">T. Can, A. O. Karalı, <strong>T. Aytaç</strong>.</span>
           <span class="pub-title-inline">Detection and tracking of sea-surface targets in infrared and visual band videos using the bag-of-features technique with scale-invariant feature transform.</span>
-          <span class="pub-venue"><em>Applied Optics</em>, 50(33):6302-6312, 2011.</span>
-        </li>
-        <li>
+          <span class="pub-venue"><em>Applied Optics</em>, 50(33):6302–6312, 2011.</span>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">008</span>
+        <div>
           <span class="pub-authors">A. O. Karalı, O. E. Okman, <strong>T. Aytaç</strong>.</span>
           <span class="pub-title-inline">Adaptive enhancement of sea-surface targets in infrared images based on local frequency cues.</span>
-          <span class="pub-venue"><em>Journal of the Optical Society of America A: Optics, Image Science &amp; Vision</em>, 27(3):509-517, 2010.</span>
-        </li>
-        <li>
+          <span class="pub-venue"><em>Journal of the Optical Society of America A</em>, 27(3):509–517, 2010.</span>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">009</span>
+        <div>
           <span class="pub-authors"><strong>T. Aytaç</strong>, B. Barshan.</span>
           <span class="pub-title-inline">Recognizing targets from infrared intensity scan patterns using artificial neural networks.</span>
-          <span class="pub-venue"><em>Optical Engineering</em>, 48(1):1-13, 2009.</span>
-        </li>
-        <li>
+          <span class="pub-venue"><em>Optical Engineering</em>, 48(1):1–13, 2009.</span>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">010</span>
+        <div>
           <span class="pub-authors">B. Barshan, <strong>T. Aytaç</strong>, Ç. Yüzbaşıoğlu.</span>
           <span class="pub-title-inline">Target differentiation with simple infrared sensors using statistical pattern recognition techniques.</span>
-          <span class="pub-venue"><em>Pattern Recognition</em>, 40(10):2607-2620, 2007.</span>
-        </li>
-        <li>
+          <span class="pub-venue"><em>Pattern Recognition</em>, 40(10):2607–2620, 2007.</span>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">011</span>
+        <div>
           <span class="pub-authors"><strong>T. Aytaç</strong>, B. Barshan.</span>
           <span class="pub-title-inline">Simultaneous extraction of geometry and surface properties of targets using simple infrared sensors.</span>
-          <span class="pub-venue"><em>Optical Engineering</em>, 43(10):2437-2447, 2004.</span>
-        </li>
-        <li>
+          <span class="pub-venue"><em>Optical Engineering</em>, 43(10):2437–2447, 2004.</span>
+        </div>
+      </li>
+      <li class="pub-item reveal">
+        <span class="pub-num">012</span>
+        <div>
           <span class="pub-authors"><strong>T. Aytaç</strong>, B. Barshan.</span>
           <span class="pub-title-inline">Differentiation and localization of targets using infrared sensors.</span>
-          <span class="pub-venue"><em>Optics Communications</em>, 210(1-2):25-35, 2002.</span>
-        </li>
-      </ol>
+          <span class="pub-venue"><em>Optics Communications</em>, 210(1–2):25–35, 2002.</span>
+        </div>
+      </li>
+    </ol>
+
+    <p style="margin-top:50px;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)" class="reveal">
+      <a class="org" href="https://scholar.google.com/citations?user=d68PAlAAAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="en">→ Full record on Google Scholar</span>
+        <span class="tr">→ Tam liste için Google Scholar</span>
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ==================== EDUCATION ==================== -->
+<section class="chapter" id="education">
+  <div class="container">
+    <div class="chapter-head reveal">
+      <div>
+        <div class="chapter-kicker"><span class="en">Academic Background</span><span class="tr">Akademik Geçmiş</span></div>
+        <div class="chapter-num">— 07</div>
+      </div>
+      <h2 class="chapter-title">
+        <span class="en"><em>Education</em></span>
+        <span class="tr"><em>Eğitim</em></span>
+      </h2>
     </div>
 
+    <div class="edu-grid">
+      <div class="edu-row reveal">
+        <div class="edu-degree">PhD</div>
+        <div>
+          <div class="edu-school">
+            <span class="en">Bilkent University · Electrical &amp; Electronics Engineering</span>
+            <span class="tr">Bilkent Üniversitesi · Elektrik &amp; Elektronik Mühendisliği</span>
+          </div>
+          <div class="edu-detail">
+            <span class="en">Dissertation: <em>A Comparative Analysis of Different Approaches to Target Differentiation and Localization Using Infrared Sensors</em>.<br>Supervisor: <a class="org" href="https://www.ee.bilkent.edu.tr/~billur/" target="_blank" rel="noopener">Prof. Dr. Billur Barshan</a>.</span>
+            <span class="tr">Doktora tezi: <em>Kızılötesi Algılayıcılar Kullanılarak Hedef Ayrımı ve Konumlamaya Yönelik Farklı Yaklaşımların Karşılaştırmalı Analizi</em>.<br>Danışman: <a class="org" href="https://www.ee.bilkent.edu.tr/~billur/" target="_blank" rel="noopener">Prof. Dr. Billur Barshan</a>.</span>
+          </div>
+        </div>
+        <div class="edu-period">Dec 2006</div>
+      </div>
+
+      <div class="edu-row reveal">
+        <div class="edu-degree">MSc</div>
+        <div>
+          <div class="edu-school">
+            <span class="en">Bilkent University · Electrical &amp; Electronics Engineering</span>
+            <span class="tr">Bilkent Üniversitesi · Elektrik &amp; Elektronik Mühendisliği</span>
+          </div>
+          <div class="edu-detail">
+            <span class="en">Thesis: <em>Differentiation and Localization Using Infrared Sensors</em>.<br>Supervisor: <a class="org" href="https://www.ee.bilkent.edu.tr/~billur/" target="_blank" rel="noopener">Prof. Dr. Billur Barshan</a>.</span>
+            <span class="tr">Yüksek lisans tezi: <em>Kızılötesi Algılayıcılarla Ayrım ve Konumlama</em>.<br>Danışman: <a class="org" href="https://www.ee.bilkent.edu.tr/~billur/" target="_blank" rel="noopener">Prof. Dr. Billur Barshan</a>.</span>
+          </div>
+        </div>
+        <div class="edu-period">Aug 2002</div>
+      </div>
+
+      <div class="edu-row reveal">
+        <div class="edu-degree">BSc</div>
+        <div>
+          <div class="edu-school">
+            <span class="en">Gazi University · Electrical &amp; Electronics Engineering</span>
+            <span class="tr">Gazi Üniversitesi · Elektrik &amp; Elektronik Mühendisliği</span>
+          </div>
+          <div class="edu-detail">
+            <span class="en">Completed one year of English preparatory class.</span>
+            <span class="tr">Bir yıl İngilizce hazırlık sınıfı tamamlandı.</span>
+          </div>
+        </div>
+        <div class="edu-period">Jun 2000</div>
+      </div>
+
+      <div class="edu-row reveal">
+        <div class="edu-degree">
+          <span class="en">High School</span>
+          <span class="tr">Lise</span>
+        </div>
+        <div>
+          <div class="edu-school">
+            <span class="en">Ankara Anatolian High School (German Section)</span>
+            <span class="tr">Ankara Anadolu Lisesi (Almanca Bölümü)</span>
+          </div>
+          <div class="edu-detail">
+            <span class="en">Completed one year of German preparatory class.</span>
+            <span class="tr">Bir yıl Almanca hazırlık sınıfı tamamlandı.</span>
+          </div>
+        </div>
+        <div class="edu-period">Jun 1995</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VISIBILITY / KEYNOTES ==================== -->
+<section class="chapter alt" id="visibility">
+  <div class="container">
+    <div class="chapter-head reveal">
+      <div>
+        <div class="chapter-kicker"><span class="en">Keynotes</span><span class="tr">Konuşmalar</span></div>
+        <div class="chapter-num">— 08</div>
+      </div>
+      <h2 class="chapter-title">
+        <span class="en">Visibility &amp; <em>keynotes</em></span>
+        <span class="tr">Görünürlük &amp; <em>konuşmalar</em></span>
+      </h2>
+    </div>
+
+    <div class="vis-grid">
+      <div class="vis-card reveal">
+        <div class="vis-type">
+          <span class="en">Panel · Nov 2024</span>
+          <span class="tr">Panel · Kasım 2024</span>
+        </div>
+        <h3 class="vis-title">
+          <span class="en">Invited Panelist — Electronic Warfare &amp; AI</span>
+          <span class="tr">Davetli Panelist — Elektronik Harp &amp; Yapay Zekâ</span>
+        </h3>
+        <p class="vis-desc">
+          <span class="en">Defense Industry Artificial Intelligence Summit, hosted by the Defence Industry Agency (SSB) — Ankara, Türkiye.</span>
+          <span class="tr">Savunma Sanayii Yapay Zekâ Zirvesi, ev sahibi Savunma Sanayii Başkanlığı (SSB) — Ankara, Türkiye.</span>
+        </p>
+      </div>
+
+      <div class="vis-card reveal reveal-d1">
+        <div class="vis-type">
+          <span class="en">Invited Talk · Dec 2023</span>
+          <span class="tr">Davetli Konuşma · Aralık 2023</span>
+        </div>
+        <h3 class="vis-title">
+          <span class="en">National Electronic Warfare Symposium</span>
+          <span class="tr">Ulusal Elektronik Harp Sempozyumu</span>
+        </h3>
+        <p class="vis-desc">
+          <span class="en">"Applying Cognitive EW Concepts to Electro-optical Systems" — inaugural national EW symposium hosted by the Defence Industry Agency (SSB), Ankara, Türkiye.</span>
+          <span class="tr">"Bilişsel EH Kavramlarının Elektro-optik Sistemlere Uygulanması" — Savunma Sanayii Başkanlığı (SSB) ev sahipliğindeki ilk ulusal EH sempozyumu, Ankara, Türkiye.</span>
+        </p>
+      </div>
+
+      <div class="vis-card reveal reveal-d2">
+        <div class="vis-type">
+          <span class="en">Presentation · 2022</span>
+          <span class="tr">Sunum · 2022</span>
+        </div>
+        <h3 class="vis-title">
+          <span class="en">NATO Technical Presentation — NAFAG Topical Meeting</span>
+          <span class="tr">NATO Teknik Sunumu — NAFAG Konu Toplantısı</span>
+        </h3>
+        <p class="vis-desc">
+          <span class="en">EW database management and joint operational analysis systems for coalition-level electronic warfare operations — London, UK.</span>
+          <span class="tr">Koalisyon düzeyinde EH operasyonları için EH veritabanı yönetimi ve müşterek operasyonel analiz sistemleri — Londra, Birleşik Krallık.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ACTIVITIES ==================== -->
+<section class="chapter" id="activities">
+  <div class="container">
+    <div class="chapter-head reveal">
+      <div>
+        <div class="chapter-kicker"><span class="en">Service &amp; Engagement</span><span class="tr">Hizmetler &amp; Katılım</span></div>
+        <div class="chapter-num">— 09</div>
+      </div>
+      <h2 class="chapter-title">
+        <span class="en">Professional <em>activities</em></span>
+        <span class="tr">Mesleki <em>faaliyetler</em></span>
+      </h2>
+    </div>
+
+    <!-- Group 1 -->
+    <div class="act-group reveal">
+      <h3 class="act-group-title" data-num="I">
+        <span class="en">Academic &amp; Advisory</span>
+        <span class="tr">Akademik &amp; Danışma</span>
+      </h3>
+      <ul class="act-list">
+        <li class="act-item">
+          <span class="act-type"><span class="en">Advisory Board</span><span class="tr">Danışma Kurulu</span></span>
+          <strong><span class="en">Advisory Board Member</span><span class="tr">Danışma Kurulu Üyesi</span></strong> —
+          <a class="org" href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener"><span class="en">Dept. of Electrical &amp; Electronics Engineering</span><span class="tr">Elektrik &amp; Elektronik Mühendisliği Bölümü</span></a>, <a class="org" href="https://w3.bilkent.edu.tr/bilkent/" target="_blank" rel="noopener">Bilkent University</a> · Jan 2025 — Present.
+        </li>
+        <li class="act-item">
+          <span class="act-type"><span class="en">Instructor</span><span class="tr">Ders Yürütücüsü</span></span>
+          <span class="en">EO/IR EW Systems and Techniques (the first graduate-level course of its kind in Türkiye), National Defense University, Alparslan Defense Sciences Institute · Spring 2019.</span>
+          <span class="tr">EO/IR EH Sistemleri ve Teknikleri (Türkiye'de türünün ilk lisansüstü dersi), Milli Savunma Üniversitesi, Alparslan Savunma Bilimleri Enstitüsü · 2019 Bahar.</span>
+        </li>
+        <li class="act-item">
+          <span class="act-type"><span class="en">Instructor</span><span class="tr">Ders Yürütücüsü</span></span>
+          <span class="en">Basics of Signals and Systems (undergraduate, in English), Bilkent University · Fall &amp; Spring 2015.</span>
+          <span class="tr">Sinyaller ve Sistemler (lisans, İngilizce), Bilkent Üniversitesi · 2015 Güz &amp; Bahar.</span>
+        </li>
+        <li class="act-item">
+          <span class="act-type"><span class="en">Instructor</span><span class="tr">Ders Yürütücüsü</span></span>
+          <span class="en">Signals and Systems (undergraduate, in Turkish), Gazi University · Fall 2010.</span>
+          <span class="tr">Sinyaller ve Sistemler (lisans, Türkçe), Gazi Üniversitesi · 2010 Güz.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Group 2 -->
+    <div class="act-group reveal">
+      <h3 class="act-group-title" data-num="II">
+        <span class="en">Talks, Panels &amp; Recognitions</span>
+        <span class="tr">Konuşmalar, Paneller &amp; Tanınma</span>
+      </h3>
+      <ul class="act-list">
+        <li class="act-item">
+          <span class="act-type"><span class="en">Exhibitions</span><span class="tr">Fuarlar</span></span>
+          <span class="en">Representation of national electronic warfare capabilities at major international defense exhibitions (IDEF, SAHA, World Defense Show), including fighter jet EW/ESM pods, UAV self-protection systems, naval EW systems, and AI-driven signal analysis platforms.</span>
+          <span class="tr">Büyük uluslararası savunma fuarlarında (IDEF, SAHA, World Defense Show) ulusal elektronik harp yeteneklerinin temsili — savaş uçağı EH/ESM podları, İHA kendini koruma sistemleri, deniz EH sistemleri ve yapay zekâ destekli sinyal analizi platformları dâhil.</span>
+        </li>
+        <li class="act-item">
+          <span class="act-type"><span class="en">Invited Talk</span><span class="tr">Davetli Konuşma</span></span>
+          "New Technologies in Electronic Warfare" — GE 304 Seminar,
+          <a class="org" href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener">Bilkent University</a>, Mar 2022.
+        </li>
+        <li class="act-item">
+          <span class="act-type"><span class="en">Invited Talk</span><span class="tr">Davetli Konuşma</span></span>
+          "Infrared Electronic Warfare" — GE 304 Seminar,
+          <a class="org" href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener">Bilkent University</a>, Mar 2018.
+        </li>
+        <li class="act-item">
+          <span class="act-type">Press · Mar 2004</span>
+          <span class="en">Featured in <em>Laser Focus World</em> — work on infrared sensor-based surface characterization was highlighted in the leading trade magazine in laser science. <a class="org" href="https://www.laserfocusworld.com/detectors-imaging/article/16550007/simple-sensor-characterizes-surfaces" target="_blank" rel="noopener">J. Wallace, "Simple Sensor Characterizes Surfaces," Laser Focus World, 40(3): 38–39 ↗</a></span>
+          <span class="tr"><em>Laser Focus World</em>'de yer aldı — kızılötesi algılayıcı tabanlı yüzey karakterizasyonu çalışması, lazer bilimi alanının önde gelen sektör dergisinde öne çıktı. <a class="org" href="https://www.laserfocusworld.com/detectors-imaging/article/16550007/simple-sensor-characterizes-surfaces" target="_blank" rel="noopener">J. Wallace, "Simple Sensor Characterizes Surfaces," Laser Focus World, 40(3): 38–39 ↗</a></span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Group 3 -->
+    <div class="act-group reveal">
+      <h3 class="act-group-title" data-num="III">
+        <span class="en">Scientific Community Service</span>
+        <span class="tr">Bilimsel Topluluk Hizmeti</span>
+      </h3>
+      <ul class="act-list">
+        <li class="act-item">
+          <span class="act-type"><span class="en">Session Organizer</span><span class="tr">Oturum Düzenleyicisi</span></span>
+          <span class="en">Organized Special Session on "Image Processing and Applications in Infrared Band" at IEEE SIU 2013 — Kyrenia, TRNC.</span>
+          <span class="tr">IEEE SIU 2013'te "Kızılötesi Bantta Görüntü İşleme ve Uygulamaları" özel oturumunu düzenledi — Girne, KKTC.</span>
+        </li>
+        <li class="act-item">
+          <span class="act-type"><span class="en">Reviewer</span><span class="tr">Hakem</span></span>
+          <span class="en">Frequent scientific reviewer for <em>Applied Optics</em>, <em>Journal of Electronic Imaging</em>, <em>Optical Engineering</em>, <em>JOSA A</em>, <em>Optics Letters</em>, and <em>Real-Time Image Processing</em>.</span>
+          <span class="tr"><em>Applied Optics</em>, <em>Journal of Electronic Imaging</em>, <em>Optical Engineering</em>, <em>JOSA A</em>, <em>Optics Letters</em> ve <em>Real-Time Image Processing</em> dergileri için sürekli bilimsel hakemlik.</span>
+        </li>
+        <li class="act-item">
+          <span class="act-type"><span class="en">Referee</span><span class="tr">Hakem</span></span>
+          <span class="en">Referee for ASELSAN in-house R&amp;D projects — May 2019 — Aug 2021.</span>
+          <span class="tr">ASELSAN şirket içi Ar-Ge projeleri için hakem — Mayıs 2019 — Ağustos 2021.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Group 4 -->
+    <div class="act-group reveal">
+      <h3 class="act-group-title" data-num="IV">
+        <span class="en">Funding &amp; Grant Activities</span>
+        <span class="tr">Fonlama &amp; Proje Faaliyetleri</span>
+      </h3>
+      <ul class="act-list">
+        <li class="act-item">
+          <span class="act-type"><span class="en">Mentorship</span><span class="tr">Mentörlük</span></span>
+          <span class="en">Project Mentor for TÜBİTAK 1001 research projects.</span>
+          <span class="tr">TÜBİTAK 1001 araştırma projeleri için Proje Mentörü.</span>
+        </li>
+        <li class="act-item">
+          <span class="act-type"><span class="en">Reviewing Committee</span><span class="tr">Değerlendirme Kurulu</span></span>
+          <span class="en">Panel Member in the Reviewing Committee for TÜBİTAK Career and 1001 Projects.</span>
+          <span class="tr">TÜBİTAK Kariyer ve 1001 Projeleri Değerlendirme Kurulu Panel Üyesi.</span>
+        </li>
+        <li class="act-item">
+          <span class="act-type"><span class="en">Referee</span><span class="tr">Hakem</span></span>
+          <span class="en">Referee for TÜBİTAK Technology and Innovation Grant Programs.</span>
+          <span class="tr">TÜBİTAK Teknoloji ve Yenilik Destek Programları için hakem.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="chapter-head reveal" style="margin-bottom:60px">
+      <div>
+        <div class="chapter-kicker"><span class="en">Contact</span><span class="tr">İletişim</span></div>
+        <div class="chapter-num">— 10</div>
+      </div>
+      <h2 class="chapter-title">
+        <span class="en">Get in <em>touch</em></span>
+        <span class="tr">İletişime <em>geçin</em></span>
+      </h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="contact-lede">
+          <span class="en">For collaboration, advisory, or speaking enquiries — <em>I review all messages</em> and respond where there is a clear fit.</span>
+          <span class="tr">İş birliği, danışmanlık veya konuşma talepleri için — <em>tüm talepleri değerlendirir</em>, uygun kesişimlerde dönüş yaparım.</span>
+        </p>
+        <p class="contact-affil">
+          <span class="en">Director · Advanced Technologies Research Institute</span>
+          <span class="tr">Müdür · İleri Teknolojiler Araştırma Enstitüsü</span><br>
+          <a href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener">TÜBİTAK</a> ·
+          <a href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener">BİLGEM</a> ·
+          <a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener">İLTAREN</a><br>
+          Ankara · Türkiye
+        </p>
+      </div>
+
+      <div class="contact-links reveal reveal-d1">
+        <a class="contact-link" href="https://www.linkedin.com/in/tayfunaytac/" target="_blank" rel="noopener">
+          <span class="cl-label">LinkedIn</span>
+          <span class="cl-value">linkedin.com/in/tayfunaytac</span>
+          <span class="cl-arrow">→</span>
+        </a>
+
+        <a class="contact-link" href="https://scholar.google.com/citations?user=d68PAlAAAAAJ&hl=en" target="_blank" rel="noopener">
+          <span class="cl-label">Scholar</span>
+          <span class="cl-value">
+            <span class="en">Google Scholar profile</span>
+            <span class="tr">Google Scholar profili</span>
+          </span>
+          <span class="cl-arrow">→</span>
+        </a>
+
+        <a class="contact-link" href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener">
+          <span class="cl-label">Office</span>
+          <span class="cl-value">
+            <span class="en">TÜBİTAK BİLGEM İLTAREN</span>
+            <span class="tr">TÜBİTAK BİLGEM İLTAREN</span>
+          </span>
+          <span class="cl-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>© <span id="year"></span> Tayfun Aytaç</span>
+      <span>Ankara · Türkiye</span>
+    </div>
   </div>
 </section>
 
 <script>
-  document.getElementById('pubTabs').addEventListener('click', function(e) {
-    const btn = e.target.closest('.pub-tab');
-    if (!btn) return;
-    document.querySelectorAll('.pub-tab').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.pub-panel').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // topbar shrink
+  const topbar = document.getElementById('topbar');
+  window.addEventListener('scroll', () => {
+    topbar.classList.toggle('scrolled', window.scrollY > 30);
   });
+
+  // mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', () => {
+    const open = menuBtn.classList.toggle('open');
+    nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menuBtn.classList.remove('open');
+    nav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  // language toggle
+  const html = document.documentElement;
+  const langBtns = document.querySelectorAll('[data-set-lang]');
+  const setLang = (l) => {
+    html.setAttribute('data-lang', l);
+    html.setAttribute('lang', l);
+    langBtns.forEach(b => b.classList.toggle('active', b.dataset.setLang === l));
+    try { localStorage.setItem('site-lang', l); } catch(e) {}
+  };
+  langBtns.forEach(b => b.addEventListener('click', () => {
+    if (b.dataset.setLang === 'tr') return;
+    setLang(b.dataset.setLang);
+  }));
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="container">
-    <div class="section-label">Academic Background</div>
-    <h2 class="section-title">Education</h2>
-    <div class="section-divider"></div>
-    <div class="edu-grid">
-
-      <div class="edu-card">
-        <div>
-          <div class="edu-degree">PhD</div>
-          <div class="edu-school"><a href="https://w3.bilkent.edu.tr/bilkent/" target="_blank" rel="noopener noreferrer" class="org-link">Bilkent University</a> · <a href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener noreferrer" class="org-link">Dept. of Electrical &amp; Electronics Engineering</a></div>
-          <div class="edu-detail">
-            Dissertation: <em>A Comparative Analysis of Different Approaches to Target Differentiation and Localization Using Infrared Sensors</em><br>
-            Supervisor: <a href="https://www.ee.bilkent.edu.tr/~billur/" target="_blank" rel="noopener noreferrer" class="org-link">Prof. Dr. Billur Barshan</a>
-          </div>
-        </div>
-        <span class="edu-period">Dec 2006</span>
-      </div>
-
-      <div class="edu-card">
-        <div>
-          <div class="edu-degree">MSc</div>
-          <div class="edu-school"><a href="https://w3.bilkent.edu.tr/bilkent/" target="_blank" rel="noopener noreferrer" class="org-link">Bilkent University</a> · <a href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener noreferrer" class="org-link">Dept. of Electrical &amp; Electronics Engineering</a></div>
-          <div class="edu-detail">
-            Thesis: <em>Differentiation and Localization Using Infrared Sensors</em><br>
-            Supervisor: <a href="https://www.ee.bilkent.edu.tr/~billur/" target="_blank" rel="noopener noreferrer" class="org-link">Prof. Dr. Billur Barshan</a>
-          </div>
-        </div>
-        <span class="edu-period">Aug 2002</span>
-      </div>
-
-      <div class="edu-card">
-        <div>
-          <div class="edu-degree">BSc</div>
-          <div class="edu-school"><a href="https://gazi.edu.tr/" target="_blank" rel="noopener noreferrer" class="org-link">Gazi University</a> · <a href="https://mf-eem.gazi.edu.tr/?language=en_US" target="_blank" rel="noopener noreferrer" class="org-link">Dept. of Electrical &amp; Electronics Engineering</a></div>
-          <div class="edu-detail">Completed one year of English preparation class.</div>
-        </div>
-        <span class="edu-period">Jun 2000</span>
-      </div>
-
-      <div class="edu-card">
-        <div>
-          <div class="edu-degree">High School Diploma</div>
-          <div class="edu-school">Ankara Anatolian High School (German Section)</div>
-          <div class="edu-detail">Completed one year of German preparation class.</div>
-        </div>
-        <span class="edu-period">Jun 1995</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED -->
-<section id="featured">
-  <div class="container">
-    <div class="section-label">Keynotes</div>
-    <h2 class="section-title">Visibility &amp; Keynotes</h2>
-    <div class="section-divider"></div>
-    <div class="feat-grid">
-
-      <div class="feat-card">
-        <div class="feat-type">🎙 Panel · Nov 2024</div>
-        <div class="feat-title">Invited Panelist — Electronic Warfare &amp; AI</div>
-        <div class="feat-desc">
-          Defense Industry Artificial Intelligence Summit, hosted by the Defence Industry Agency (SSB) — Ankara, Türkiye, Nov 2024.
-        </div>
-      </div>
-
-      <div class="feat-card">
-        <div class="feat-type">🎤 Invited Talk · Dec 2023</div>
-        <div class="feat-title">Invited Speaker — National Electronic Warfare Symposium (SSB, 2023)</div>
-        <div class="feat-desc">
-          "Applying Cognitive EW Concepts to Electro-optical Systems" — inaugural national Electronic Warfare Symposium, hosted by the Defence Industry Agency (SSB), Ankara, Türkiye, Dec 2023.
-        </div>
-      </div>
-
-      <div class="feat-card">
-        <div class="feat-type">📢 Presentation · 2022</div>
-        <div class="feat-title">NATO Technical Presentation — NAFAG Topical Meeting</div>
-        <div class="feat-desc">
-          Presented EW database management and joint operational analysis systems for coalition-level electronic warfare operations — London, UK, 2022.
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PROFESSIONAL ACTIVITIES -->
-<section id="activities" style="background: var(--bg);">
-  <div class="container">
-    <div class="section-label">Service &amp; Engagement</div>
-    <h2 class="section-title">Professional Activities &amp; Affiliations</h2>
-    <div class="section-divider"></div>
-    <!-- Group 1: Academic & Advisory -->
-    <div class="act-group-label">🏛 Academic &amp; Advisory</div>
-    <ul class="activity-list">
-      <li class="activity-item">
-        <span class="activity-icon">🏛</span>
-        <div>
-          <span class="activity-type">Advisory Board</span>
-          <strong>Advisory Board Member</strong>, <a href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener noreferrer" class="org-link">Dept. of Electrical &amp; Electronics Engineering</a>,
-          <a href="https://w3.bilkent.edu.tr/bilkent/" target="_blank" rel="noopener noreferrer" class="org-link">Bilkent University</a> — Jan 2025 – Present.
-        </div>
-      </li>
-      <li class="activity-item">
-        <span class="activity-icon">🎓</span>
-        <div>
-          <span class="activity-type">Instructor</span>
-           EO/IR EW Systems and Techniques
-          (first graduate-level course of its kind in Türkiye),
-          National Defense University, Alparslan Defense Sciences Institute · Spring 2019.
-        </div>
-      </li>
-      <li class="activity-item">
-        <span class="activity-icon">🎓</span>
-        <div>
-          <span class="activity-type">Instructor</span>
-           Basics of Signals and Systems (undergraduate, in English),
-          <a href="https://w3.bilkent.edu.tr/bilkent/" target="_blank" rel="noopener noreferrer" class="org-link">Bilkent University</a>, <a href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener noreferrer" class="org-link">Dept. of Electrical &amp; Electronics Engineering</a> · Fall &amp; Spring 2015.
-        </div>
-      </li>
-      <li class="activity-item">
-        <span class="activity-icon">🎓</span>
-        <div>
-          <span class="activity-type">Instructor</span>
-           Signals and Systems (undergraduate, in Turkish),
-          Gazi University, Dept. of Electrical &amp; Electronics Engineering · Fall 2010.
-        </div>
-      </li>
-    </ul>
-
-    <!-- Group 2: Talks, Panels, Presentations & Recognitions -->
-    <div class="act-group-label">🎤 Talks, Panels, Presentations &amp; Recognitions</div>
-    <ul class="activity-list">
-      <li class="activity-item">
-        <span class="activity-icon">🌐</span>
-        <div>
-          <span class="activity-type">Exhibition</span>
-          Representation of national electronic warfare capabilities at major international defense exhibitions (IDEF, SAHA, World Defense Show), including fighter jet EW/ESM pods, UAV self-protection systems, naval EW systems, and AI-driven signal analysis platforms.
-        </div>
-      </li>
-      <li class="activity-item">
-        <span class="activity-icon">🎤</span>
-        <div>
-          <span class="activity-type">Invited Talk</span>
-          "New Technologies in Electronic Warfare" — GE 304 Seminar,
-          <a href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener noreferrer" class="org-link">Dept. of Electrical &amp; Electronics Engineering, Bilkent University</a>, Mar 2022.
-        </div>
-      </li>
-      <li class="activity-item">
-        <span class="activity-icon">🎤</span>
-        <div>
-          <span class="activity-type">Invited Talk</span>
-          "Infrared Electronic Warfare" — GE 304 Seminar,
-          <a href="https://ee.bilkent.edu.tr/en/" target="_blank" rel="noopener noreferrer" class="org-link">Dept. of Electrical &amp; Electronics Engineering, Bilkent University</a>, Mar 2018.
-        </div>
-      </li>
-      <li class="activity-item">
-        <span class="activity-icon">📰</span>
-        <div>
-          <span class="activity-type">Press · Laser Focus World · Mar 2004</span>
-          Featured in Laser Focus World for Infrared Sensing Research — Work on infrared sensor-based surface characterization was highlighted in Laser Focus World, the leading trade magazine in laser science.
-          <a href="https://www.laserfocusworld.com/detectors-imaging/article/16550007/simple-sensor-characterizes-surfaces" target="_blank" rel="noopener noreferrer" class="org-link">J. Wallace, "Simple Sensor Characterizes Surfaces," Laser Focus World, 40(3): 38-39, Mar 2004 ↗</a>
-        </div>
-      </li>
-    </ul>
-
-    <!-- Group 3: Scientific Community Service -->
-    <div class="act-group-label">🔬 Scientific Community Service</div>
-    <ul class="activity-list">
-      <li class="activity-item">
-        <span class="activity-icon">🗂</span>
-        <div>
-          <span class="activity-type">Session Organizer</span>
-          Organized Special Session on "Image Processing and Applications in Infrared Band"
-          at the IEEE SIU 2013 Conference — Kyrenia, Turkish Republic of Northern Cyprus.
-        </div>
-      </li>
-      <li class="activity-item">
-        <span class="activity-icon">📝</span>
-        <div>
-          <span class="activity-type">Reviewer</span>
-          Frequent scientific reviewer for <em>Applied Optics</em>, <em>Journal of Electronic Imaging</em>,
-          <em>Optical Engineering</em>, <em>JOSA A</em>, <em>Optics Letters</em>,
-          and <em>Real Time Image Processing</em>.
-        </div>
-      </li>
-      <li class="activity-item">
-        <span class="activity-icon">🔍</span>
-        <div>
-          <span class="activity-type">Referee</span>
-          Referee for ASELSAN in-house R&amp;D Projects — May 2019 through Aug 2021.
-        </div>
-      </li>
-    </ul>
-
-    <!-- Group 4: Funding & Grant Activities -->
-    <div class="act-group-label">💡 Funding &amp; Grant Activities</div>
-    <ul class="activity-list">
-      <li class="activity-item">
-        <span class="activity-icon">🧭</span>
-        <div>
-          <span class="activity-type">Mentorship</span>
-          Project Mentor for TÜBİTAK 1001 research projects.
-        </div>
-      </li>
-      <li class="activity-item">
-        <span class="activity-icon">🧑‍⚖️</span>
-        <div>
-          <span class="activity-type">Reviewing Committee</span>
-          Panel Member in the Reviewing Committee for TÜBİTAK Career and 1001 Projects.
-        </div>
-      </li>
-      <li class="activity-item">
-        <span class="activity-icon">🔍</span>
-        <div>
-          <span class="activity-type">Referee</span>
-          Referee for TÜBİTAK Technology and Innovation Grant Programs.
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- CERTS -->
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-name">Tayfun Aytaç</div>
-  <div class="footer-sub">
-    Director, Advanced Technologies Research Institute ·
-    <a href="https://www.tubitak.gov.tr/en" target="_blank" rel="noopener noreferrer" class="org-link">TÜBİTAK</a> ·
-    <a href="https://bilgem.tubitak.gov.tr/en" target="_blank" rel="noopener noreferrer" class="org-link">BİLGEM</a> ·
-    <a href="https://bilgem.tubitak.gov.tr/en/iltaren/" target="_blank" rel="noopener noreferrer" class="org-link">İLTAREN</a>
-  </div>
-  <div class="footer-contact">
-    <a href="https://www.linkedin.com/in/tayfunaytac/" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      LinkedIn Profile
-    </a>
-    <a href="https://scholar.google.com/citations?user=d68PAlAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
-      Google Scholar
-    </a>
-  </div>
-  <div class="footer-links">
-    <a href="#about">About</a>
-    <a href="#impact">Impact</a>
-    <a href="#experience">Experience</a>
-    <a href="#strategic">Focus Areas</a>
-    <a href="#flagship">Programs</a>
-    <a href="#publications">Selected Publications</a>
-    <a href="#education">Education</a>
-    <a href="#featured">Visibility</a>
-    <a href="#activities">Professional</a>
-  </div>
-</footer>
 </body>
 </html>
